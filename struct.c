@@ -1,4 +1,4 @@
-struct Station
+struct Station //test
 {
         float coord;
         char * nom;
