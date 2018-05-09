@@ -1,6 +1,7 @@
 struct Station //test
 {
-        float coord;
+        float lon;
+	float lat;
         char * nom;
         int suivant_aller;
         int suivant_retour;
@@ -12,6 +13,7 @@ struct Ligne
 {
         int nb_station_aller;
         int nb_station_retour;
+	char * nom;
         char * couleur;
         station * stat;
 };
