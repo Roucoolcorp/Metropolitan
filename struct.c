@@ -1,13 +1,20 @@
-struct Station //test
+typedef struct Station station;
+typedef struct Ligne ligne;
+
+struct Station
 {
         float lon;
 	float lat;
         char * nom;
         int suivant_aller;
         int suivant_retour;
+	station ** suivant;
+	station ** precedent;
+	ligne ** lignes;
+        int distance;
+        int id;
 };
 
-typedef struct Station station;
 
 struct Ligne
 {
@@ -18,15 +25,9 @@ struct Ligne
         station * stat;
 };
 
-typedef struct Ligne ligne;
-
-
-
-
-
-
 struct Reseau
 {
+        int nb_station;
         int nb_ligne;
         ligne * line;
 };
