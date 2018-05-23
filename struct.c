@@ -12,16 +12,6 @@ struct Station
         station ** stat_adj; 
 };
 
-//struct Sous_stat
-//{
- //       int suivant_aller;
-  //      int suivant_retour;
-    //    sous_stat ** suivants;
-      //  sous_stat ** precedent;
-       // ligne * line; 
-        //int distance;
-//};
-
 //struct Ligne
 //{
  //       int nb_station_aller;
@@ -30,6 +20,15 @@ struct Station
  //       char * couleur;
   //      station * stat;
 //};
+
+struct _mat_graphe
+{
+int nb_lignes ;
+int nb_colonnes ;
+double * contenu ;
+};
+
+typedef struct _mat_graphe mat_graphe;
 
 struct Reseau
 {

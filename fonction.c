@@ -3,12 +3,7 @@
 #include <string.h>
 #include <limits.h>
 
-double recuperer_element(reseau * R, int ligne, int colonne){
 
-	int position = ligne * p_graphe->nb_colonnes+colonne;
-	int valeur = p_graphe->contenu[position];
-	return valeur;
-}
 
 int degre_positif(int s, mat_graphe *p_graphe)
 {
