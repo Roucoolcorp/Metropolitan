@@ -4,12 +4,12 @@ typedef struct Ligne ligne;
 
 struct Station
 {
-        float lon;
-        float lat;
-        char * nom;
-        int id;
-        int nb_stat_adj;
-        station ** stat_adj; 
+    float lon;
+    float lat;
+    char * name;
+    int id;
+    int nb_stat_adj;
+    station ** stat_adj; 
 };
 
 //struct Ligne
@@ -23,22 +23,22 @@ struct Station
 
 struct _mat_graphe
 {
-int nb_lignes ;
-int nb_colonnes ;
-double * contenu ;
+    int nb_lignes ;
+    int nb_colonnes ;
+    double * contenu ;
 };
 
 typedef struct _mat_graphe mat_graphe;
 
 struct Reseau
 {
-        int nb_station;
-        station ** stat;
+    int nb_station;
+    station ** stat;
 };
 
 typedef struct Reseau reseau;
 
 int main()
 {
-        return 0;
+    return 0;
 }
