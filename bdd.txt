@@ -1,0 +1,1069 @@
+299
+Bolivar:48.880502:2.374922
+Richelieu - Drouot:48.871987:2.338741
+Filles du Calvaire:48.864072:2.366121
+George V:48.872013:2.300569
+Charles Michels:48.846591:2.286942
+Vavin:48.842232:2.328949
+Saint-Fargeau:48.872083:2.404520
+Jules Joffrin:48.892437:2.344782
+Fort d'Aubervilliers:48.914240:2.403785
+Simplon:48.893381:2.348202
+Iéna:48.864466:2.293380
+Saint-Michel:48.853650:2.343929
+Porte d'Ivry:48.820960:2.370440
+Couronnes:48.869521:2.379861
+Église de Pantin:48.893628:2.412918
+Saint-Denis - Porte de Paris:48.930211:2.357769
+Michel Bizot:48.837485:2.401234
+Saint-Augustin:48.874441:2.322133
+Odéon:48.852066:2.338951
+La Muette:48.857718:2.273719
+Rue des Boulets:48.851811:2.390151
+Michel-Ange - Molitor:48.844960:2.261194
+Porte de Vanves:48.827940:2.305884
+La Tour-Maubourg:48.857667:2.310399
+Chardon-Lagache:48.845138:2.266214
+Villiers:48.881130:2.314867
+Bérault:48.845371:2.428264
+Villejuif - Louis Aragon:48.787175:2.367564
+Vaneau:48.848947:2.321557
+Campo-Formio:48.835022:2.358128
+Saint-Denis - Université:48.946068:2.362618
+Les Agnettes:48.923039:2.285891
+Arts et Métiers:48.865285:2.356794
+Trinité - d'Estienne d'Orves:48.876302:2.333197
+Franklin D. Roosevelt:48.868977:2.309890
+Mairie des Lilas:48.879788:2.416289
+Jourdain:48.875200:2.389508
+Porte d'Italie:48.819196:2.360805
+Barbès - Rochechouart:48.883640:2.350516
+Exelmans:48.842405:2.259549
+République:48.867503:2.363811
+Europe:48.878821:2.322380
+Wagram:48.884057:2.303668
+Buzenval:48.851976:2.402045
+Gare de l'Est:48.876142:2.358279
+Cambronne:48.847537:2.302937
+Olympiades:48.827262:2.368281
+Crimée:48.891580:2.377070
+Mairie de Saint-Ouen:48.911619:2.333753
+Saint-Sulpice:48.850909:2.330652
+Montparnasse - Bienvenüe:48.843466:2.323072
+Courcelles:48.879401:2.304339
+Quai de la Rapée:48.846539:2.365826
+Rambuteau:48.861951:2.353905
+Philippe Auguste:48.858021:2.390938
+Porte de Bagnolet:48.864565:2.407278
+Invalides:48.860764:2.314658
+Jussieu:48.846052:2.355738
+Rennes:48.848193:2.327763
+Dupleix:48.850392:2.293611
+Danube:48.881808:2.394201
+Les Sablons:48.880966:2.272432
+Place d'Italie:48.831483:2.355692
+Porte de Clignancourt:48.897036:2.344945
+Reuilly-Diderot:48.847014:2.386447
+Porte d'Auteuil:48.848025:2.258750
+Charles de Gaulle - Étoile:48.873773:2.294981
+Les Gobelins:48.835896:2.352467
+Croix de Chavaux:48.858055:2.435764
+Cour Saint-Émilion:48.833501:2.385935
+Porte des Lilas:48.877183:2.406655
+Liberté:48.825882:2.407022
+Les Halles:48.862396:2.345973
+Rue de la Pompe:48.863912:2.279052
+Quai de la Gare:48.837069:2.372773
+Ségur:48.847434:2.306853
+Plaisance:48.831553:2.313741
+Picpus:48.845150:2.400494
+Bréguet - Sabin:48.856133:2.370094
+Châtelet:48.858352:2.347324
+Denfert-Rochereau:48.833901:2.332728
+Le Kremlin-Bicêtre:48.810388:2.361849
+Boulogne - Pont de Saint-Cloud:48.840684:2.228331
+Corentin Cariou:48.894340:2.381745
+Gare du Nord:48.880575:2.354931
+Sully - Morland:48.851425:2.361894
+Porte de Versailles:48.832328:2.287841
+Porte de Pantin:48.888471:2.391814
+Rome:48.882425:2.322052
+Saint-Lazare:48.875684:2.325610
+Château d'Eau:48.872901:2.356149
+Avenue Émile Zola:48.846977:2.294512
+Lamarck - Caulaincourt:48.889139:2.338159
+Edgar Quinet:48.841048:2.325084
+Alma - Marceau:48.864904:2.300234
+Porte de la Villette:48.897089:2.385876
+Cardinal Lemoine:48.847139:2.351203
+Michel-Ange - Auteuil:48.847771:2.263870
+Richard-Lenoir:48.859772:2.371843
+Mairie de Montreuil:48.862283:2.441847
+Télégraphe:48.875463:2.398434
+Bastille:48.853082:2.369077
+Commerce:48.845093:2.294215
+Bir-Hakeim:48.853917:2.289332
+Mairie d'Ivry:48.811124:2.383387
+Mouton-Duvernet:48.832139:2.330325
+Gabriel Péri:48.916575:2.294388
+Riquet:48.887880:2.373578
+Chaussée d'Antin - La Fayette:48.873072:2.333932
+Bercy:48.839930:2.380418
+La Courneuve - 8 Mai 1945:48.920777:2.410668
+Pierre et Marie Curie:48.815918:2.377894
+Bobigny - Pablo Picasso:48.906538:2.449994
+Notre-Dame-de-Lorette:48.876040:2.337341
+Saint-Georges:48.878449:2.337382
+Jasmin:48.851898:2.267856
+Porte d'Orléans:48.823190:2.325363
+Guy Môquet:48.892221:2.327174
+Saint-Jacques:48.832913:2.337081
+Château-Landon:48.878456:2.362071
+Créteil - Préfecture:48.779772:2.459317
+Père Lachaise:48.862921:2.387388
+Louise Michel:48.889273:2.288073
+Kléber:48.871138:2.293118
+Bel-Air:48.841344:2.400912
+Cadet:48.876135:2.344876
+Bibliothèque François Mitterrand:48.829823:2.376781
+Gare d'Austerlitz:48.842626:2.364971
+Abbesses:48.884849:2.338688
+Poissonnière:48.877075:2.348446
+Colonel Fabien:48.877136:2.371160
+Raspail:48.839194:2.330606
+Quatre-Septembre:48.869574:2.336633
+Ourcq:48.886856:2.385747
+Mairie de Clichy:48.903959:2.305343
+Pernety:48.834210:2.318512
+Marx Dormoy:48.891213:2.359909
+Maraïchers:48.852851:2.406990
+Pyrénées:48.873875:2.385259
+Ranelagh:48.855020:2.269634
+Gare de Lyon:48.844728:2.373929
+Aubervilliers - Pantin - Quatre Chemins:48.903897:2.392496
+Bobigny - Pantin - Raymond Queneau:48.895409:2.424929
+Jacques Bonsergent:48.871201:2.360607
+Maisons-Alfort - Les Juilliottes:48.802567:2.446432
+Champs-Élysées - Clémenceau:48.867531:2.313542
+Brochant:48.890855:2.319700
+Passy:48.857445:2.285779
+Carrefour Pleyel:48.919942:2.343926
+Belleville:48.872083:2.376947
+Marcel Sembat:48.833670:2.243579
+Porte Dauphine:48.871545:2.276768
+Pont de Neuilly:48.884968:2.259775
+Gambetta:48.864947:2.398451
+Charonne:48.855103:2.384639
+Pigalle:48.882255:2.337573
+Chevaleret:48.834938:2.368082
+Sèvres - Babylone:48.851510:2.326655
+Grande Arche de la Défense:48.891291:2.240117
+École Vétérinaire de Maisons-Alfort:48.815190:2.421882
+Glacière:48.831150:2.343384
+Créteil - L'Échat:48.795963:2.449356
+Monceau:48.880319:2.308603
+Le Peletier:48.874720:2.339549
+Villejuif - Léo Lagrange:48.803768:2.363927
+Rue Saint-Maur:48.864335:2.379448
+Porte de Montreuil:48.853792:2.412245
+Pereire:48.884648:2.299211
+Pyramides:48.865872:2.334670
+Censier - Daubenton:48.840597:2.351774
+Liège:48.879626:2.326983
+Château Rouge:48.886730:2.349552
+Château de Vincennes:48.844382:2.440136
+Sentier:48.867569:2.346387
+Marcadet - Poissonniers:48.890369:2.350028
+Trocadéro:48.863301:2.287061
+Faidherbe - Chaligny:48.850158:2.383398
+Montgallet:48.844276:2.389974
+Pont de Sèvres:48.829747:2.231035
+Pont Neuf:48.858676:2.341488
+Saint-Marcel:48.837988:2.360416
+Solférino:48.858249:2.323225
+Cluny - La Sorbonne:48.851019:2.344583
+Place de Clichy:48.883809:2.327625
+Pelleport:48.868671:2.401752
+Porte de Clichy:48.894345:2.313652
+Asnières - Gennevilliers - Les Courtilles:48.930606:2.283788
+Esplanade de la Défense:48.888361:2.249955
+École Militaire:48.855110:2.306737
+Mabillon:48.852775:2.335322
+Boissière:48.867386:2.290392
+Volontaires:48.841343:2.307504
+La Fourche:48.886900:2.325875
+Voltaire:48.857803:2.380106
+Boucicaut:48.840578:2.286621
+Réaumur - Sébastopol:48.866246:2.352389
+Temple:48.866488:2.360595
+Buttes Chaumont:48.878500:2.381772
+Grands Boulevards:48.871426:2.344342
+Tuileries:48.864531:2.329617
+Saint-Mandé:48.846241:2.419019
+Nationale:48.833183:2.362718
+Miromesnil:48.873667:2.314465
+Porte Dorée:48.835481:2.406100
+Mairie d'Issy:48.824152:2.273434
+Billancourt:48.832090:2.238177
+Félix Faure:48.842351:2.291004
+Boulogne - Jean Jaurès:48.842278:2.238877
+Louis Blanc:48.881137:2.364839
+Saint-François-Xavier:48.851951:2.314475
+Convention:48.837419:2.296795
+Pont Marie:48.853287:2.357616
+Basilique de Saint-Denis:48.938100:2.360846
+Nation:48.848389:2.395800
+Villejuif - Paul Vaillant-Couturier:48.795991:2.368248
+Porte Maillot:48.877946:2.281925
+Saint-Ambroise:48.861295:2.374211
+Porte de Champerret:48.885851:2.293487
+Maubert - Mutualité:48.850193:2.347936
+Balard:48.835970:2.278212
+Créteil - Université:48.789754:2.450785
+Concorde:48.866176:2.322397
+Louvre - Rivoli:48.861080:2.340283
+Avron:48.851940:2.397863
+Javel - André Citroën:48.846165:2.278716
+Falguière:48.844566:2.318287
+Saint-Philippe du Roule:48.871941:2.310036
+Saint-Placide:48.846845:2.326913
+Pont de Levallois - Bécon:48.897313:2.280787
+Saint-Germain-des-Prés:48.853774:2.333280
+Victor Hugo:48.869817:2.285199
+Oberkampf:48.864545:2.368877
+Anatole France:48.892022:2.285536
+Strasbourg - Saint-Denis:48.869591:2.354009
+Argentine:48.875339:2.290113
+Botzaris:48.879552:2.388040
+Rue du Bac:48.855690:2.325607
+La Motte-Picquet - Grenelle:48.849143:2.298090
+Charenton - Écoles:48.821490:2.413862
+Corentin Celton:48.826833:2.278985
+Maisons-Alfort - Stade:48.808681:2.436073
+Anvers:48.883007:2.344849
+Ternes:48.878178:2.298671
+Étienne Marcel:48.864111:2.350608
+Stalingrad:48.884263:2.365824
+Madeleine:48.870482:2.325000
+Palais Royal - Musée du Louvre:48.862644:2.336578
+Cité:48.855637:2.346418
+Tolbiac:48.826665:2.357678
+Alésia:48.828218:2.326803
+Daumesnil:48.839644:2.395792
+Vaugirard:48.839649:2.301491
+Bourse:48.868738:2.341370
+Pré Saint-Gervais:48.880250:2.398914
+Porte de Saint-Cloud:48.838082:2.256956
+Place Monge:48.843590:2.352279
+Pasteur:48.842836:2.312681
+Malakoff - Rue Étienne Dolet:48.814703:2.297301
+Gaïté:48.838654:2.322637
+Ledru-Rollin:48.851529:2.375160
+Église d'Auteuil:48.847169:2.269020
+Duroc:48.846829:2.316479
+Porte de Choisy:48.820315:2.365293
+Malakoff - Plateau de Vanves:48.822842:2.298345
+Malesherbes:48.882476:2.311002
+Blanche:48.883459:2.333703
+Saint-Paul:48.855214:2.360859
+Châtillon - Montrouge:48.810539:2.301826
+Porte de Vincennes:48.847326:2.407759
+Garibaldi:48.906397:2.331907
+Varenne:48.856238:2.314921
+Porte de Saint-Ouen:48.896774:2.328710
+Ménilmontant:48.866248:2.383618
+Alexandre Dumas:48.855907:2.394790
+Notre-Dame-des-Champs:48.844568:2.328788
+Opéra:48.870636:2.332352
+Gallieni:48.864936:2.416637
+Place des Fêtes:48.876840:2.392960
+Chemin Vert:48.856778:2.368348
+La Chapelle:48.884411:2.360288
+Dugommier:48.839049:2.389964
+Parmentier:48.865299:2.374381
+Porte de Charenton:48.832780:2.400400
+Bonne Nouvelle:48.870639:2.348875
+Saint-Sébastien - Froissart:48.860480:2.367358
+Lourmel:48.838604:2.281817
+Mirabeau:48.846739:2.271708
+Hoche:48.891494:2.403144
+Laumière:48.885006:2.378524
+Robespierre:48.855683:2.423678
+Havre - Caumartin:48.873465:2.327968
+Assemblée Nationale:48.860655:2.321130
+Goncourt:48.869831:2.370687
+Porte de la Chapelle:48.897274:2.359191
+Sèvres - Lecourbe:48.845634:2.309476
+Hôtel de Ville:48.857487:2.351525
+Corvisart:48.829807:2.350508
+Maison Blanche:48.822155:2.358531
+Jaurès:48.881790:2.370198
+16
+Ligne 12:#006633:2
+27
+Porte de la Chapelle:Marx Dormoy:1
+Marx Dormoy:Marcadet - Poissonniers:2
+Marcadet - Poissonniers:Jules Joffrin:1
+Jules Joffrin:Lamarck - Caulaincourt:2
+Lamarck - Caulaincourt:Abbesses:1
+Abbesses:Pigalle:1
+Pigalle:Saint-Georges:1
+Saint-Georges:Notre-Dame-de-Lorette:2
+Notre-Dame-de-Lorette:Trinité - d'Estienne d'Orves:1
+Trinité - d'Estienne d'Orves:Saint-Lazare:1
+Saint-Lazare:Madeleine:2
+Madeleine:Concorde:1
+Concorde:Assemblée Nationale:2
+Assemblée Nationale:Solférino:1
+Solférino:Rue du Bac:1
+Rue du Bac:Sèvres - Babylone:1
+Sèvres - Babylone:Rennes:1
+Rennes:Notre-Dame-des-Champs:1
+Notre-Dame-des-Champs:Montparnasse - Bienvenüe:1
+Montparnasse - Bienvenüe:Falguière:1
+Falguière:Pasteur:2
+Pasteur:Volontaires:1
+Volontaires:Vaugirard:1
+Vaugirard:Convention:1
+Convention:Porte de Versailles:2
+Porte de Versailles:Corentin Celton:1
+Corentin Celton:Mairie d'Issy:3
+27
+Marx Dormoy:Porte de la Chapelle:1
+Marcadet - Poissonniers:Marx Dormoy:2
+Jules Joffrin:Marcadet - Poissonniers:1
+Lamarck - Caulaincourt:Jules Joffrin:2
+Abbesses:Lamarck - Caulaincourt:1
+Pigalle:Abbesses:1
+Saint-Georges:Pigalle:1
+Notre-Dame-de-Lorette:Saint-Georges:2
+Trinité - d'Estienne d'Orves:Notre-Dame-de-Lorette:1
+Saint-Lazare:Trinité - d'Estienne d'Orves:1
+Madeleine:Saint-Lazare:2
+Concorde:Madeleine:1
+Assemblée Nationale:Concorde:2
+Solférino:Assemblée Nationale:1
+Rue du Bac:Solférino:1
+Sèvres - Babylone:Rue du Bac:1
+Rennes:Sèvres - Babylone:1
+Notre-Dame-des-Champs:Rennes:1
+Montparnasse - Bienvenüe:Notre-Dame-des-Champs:1
+Falguière:Montparnasse - Bienvenüe:1
+Pasteur:Falguière:2
+Volontaires:Pasteur:1
+Vaugirard:Volontaires:1
+Convention:Vaugirard:1
+Porte de Versailles:Convention:2
+Corentin Celton:Porte de Versailles:1
+Mairie d'Issy:Corentin Celton:3
+Ligne 13:#66CCCC:2
+31
+Asnières - Gennevilliers - Les Courtilles:Les Agnettes:2
+Les Agnettes:Gabriel Péri:2
+Gabriel Péri:Mairie de Clichy:3
+Mairie de Clichy:Porte de Clichy:2
+Porte de Clichy:Brochant:1
+Brochant:La Fourche:2
+La Fourche:Place de Clichy:1
+Place de Clichy:Liège:2
+Liège:Saint-Lazare:1
+Saint-Lazare:Miromesnil:2
+Miromesnil:Champs-Élysées - Clémenceau:2
+Champs-Élysées - Clémenceau:Invalides:2
+Invalides:Varenne:2
+Varenne:Saint-François-Xavier:1
+Saint-François-Xavier:Duroc:1
+Duroc:Montparnasse - Bienvenüe:2
+Montparnasse - Bienvenüe:Gaïté:1
+Gaïté:Pernety:2
+Pernety:Plaisance:1
+Plaisance:Porte de Vanves:2
+Porte de Vanves:Malakoff - Plateau de Vanves:1
+Malakoff - Plateau de Vanves:Malakoff - Rue Étienne Dolet:2
+Malakoff - Rue Étienne Dolet:Châtillon - Montrouge:2
+Saint-Denis - Université:Basilique de Saint-Denis:1
+Basilique de Saint-Denis:Saint-Denis - Porte de Paris:2
+Saint-Denis - Porte de Paris:Carrefour Pleyel:3
+Carrefour Pleyel:Mairie de Saint-Ouen:1
+Mairie de Saint-Ouen:Garibaldi:2
+Garibaldi:Porte de Saint-Ouen:2
+Porte de Saint-Ouen:Guy Môquet:1
+Guy Môquet:La Fourche:2
+31
+Les Agnettes:Asnières - Gennevilliers - Les Courtilles:2
+Gabriel Péri:Les Agnettes:2
+Mairie de Clichy:Gabriel Péri:3
+Porte de Clichy:Mairie de Clichy:2
+Brochant:Porte de Clichy:1
+La Fourche:Brochant:2
+Place de Clichy:La Fourche:1
+Liège:Place de Clichy:2
+Saint-Lazare:Liège:1
+Miromesnil:Saint-Lazare:2
+Champs-Élysées - Clémenceau:Miromesnil:2
+Invalides:Champs-Élysées - Clémenceau:2
+Varenne:Invalides:2
+Saint-François-Xavier:Varenne:1
+Duroc:Saint-François-Xavier:1
+Montparnasse - Bienvenüe:Duroc:2
+Gaïté:Montparnasse - Bienvenüe:1
+Pernety:Gaïté:2
+Plaisance:Pernety:1
+Porte de Vanves:Plaisance:2
+Malakoff - Plateau de Vanves:Porte de Vanves:1
+Malakoff - Rue Étienne Dolet:Malakoff - Plateau de Vanves:2
+Châtillon - Montrouge:Malakoff - Rue Étienne Dolet:2
+Basilique de Saint-Denis:Saint-Denis - Université:1
+Saint-Denis - Porte de Paris:Basilique de Saint-Denis:2
+Carrefour Pleyel:Saint-Denis - Porte de Paris:3
+Mairie de Saint-Ouen:Carrefour Pleyel:1
+Garibaldi:Mairie de Saint-Ouen:2
+Porte de Saint-Ouen:Garibaldi:2
+Guy Môquet:Porte de Saint-Ouen:1
+La Fourche:Guy Môquet:2
+Ligne 10:#CC9933:4
+19
+Boulogne - Pont de Saint-Cloud:Boulogne - Jean Jaurès:2
+Boulogne - Jean Jaurès:Michel-Ange - Molitor:2
+Michel-Ange - Molitor:Chardon-Lagache:1
+Chardon-Lagache:Mirabeau:2
+Mirabeau:Javel - André Citroën:1
+Javel - André Citroën:Charles Michels:1
+Charles Michels:Avenue Émile Zola:2
+Avenue Émile Zola:La Motte-Picquet - Grenelle:1
+La Motte-Picquet - Grenelle:Ségur:2
+Ségur:Duroc:1
+Duroc:Vaneau:2
+Vaneau:Sèvres - Babylone:1
+Sèvres - Babylone:Mabillon:1
+Mabillon:Odéon:2
+Odéon:Cluny - La Sorbonne:1
+Cluny - La Sorbonne:Maubert - Mutualité:1
+Maubert - Mutualité:Cardinal Lemoine:1
+Cardinal Lemoine:Jussieu:1
+Jussieu:Gare d'Austerlitz:3
+19
+Boulogne - Jean Jaurès:Boulogne - Pont de Saint-Cloud:2
+Charles Michels:Javel - André Citroën:1
+Avenue Émile Zola:Charles Michels:2
+La Motte-Picquet - Grenelle:Avenue Émile Zola:1
+Ségur:La Motte-Picquet - Grenelle:2
+Duroc:Ségur:1
+Vaneau:Duroc:2
+Sèvres - Babylone:Vaneau:1
+Mabillon:Sèvres - Babylone:1
+Odéon:Mabillon:2
+Cluny - La Sorbonne:Odéon:1
+Maubert - Mutualité:Cluny - La Sorbonne:1
+Cardinal Lemoine:Maubert - Mutualité:1
+Jussieu:Cardinal Lemoine:1
+Gare d'Austerlitz:Jussieu:3
+Javel - André Citroën:Église d'Auteuil:2
+Église d'Auteuil:Michel-Ange - Auteuil:1
+Michel-Ange - Auteuil:Porte d'Auteuil:1
+Porte d'Auteuil:Boulogne - Jean Jaurès:3
+Ligne 11:#996633:2
+12
+Mairie des Lilas:Porte des Lilas:1
+Porte des Lilas:Télégraphe:2
+Télégraphe:Place des Fêtes:1
+Place des Fêtes:Jourdain:1
+Jourdain:Pyrénées:1
+Pyrénées:Belleville:1
+Belleville:Goncourt:1
+Goncourt:République:1
+République:Arts et Métiers:2
+Arts et Métiers:Rambuteau:1
+Rambuteau:Hôtel de Ville:1
+Hôtel de Ville:Châtelet:2
+12
+Porte des Lilas:Mairie des Lilas:1
+Télégraphe:Porte des Lilas:2
+Place des Fêtes:Télégraphe:1
+Jourdain:Place des Fêtes:1
+Pyrénées:Jourdain:1
+Belleville:Pyrénées:1
+Goncourt:Belleville:1
+République:Goncourt:1
+Arts et Métiers:République:2
+Rambuteau:Arts et Métiers:1
+Hôtel de Ville:Rambuteau:1
+Châtelet:Hôtel de Ville:2
+Ligne 14:#330066:2
+8
+Saint-Lazare:Madeleine:2
+Madeleine:Pyramides:2
+Pyramides:Châtelet:2
+Châtelet:Gare de Lyon:2
+Gare de Lyon:Bercy:2
+Bercy:Cour Saint-Émilion:2
+Cour Saint-Émilion:Bibliothèque François Mitterrand:2
+Bibliothèque François Mitterrand:Olympiades:2
+8
+Madeleine:Saint-Lazare:2
+Pyramides:Madeleine:2
+Châtelet:Pyramides:2
+Gare de Lyon:Châtelet:2
+Bercy:Gare de Lyon:2
+Cour Saint-Émilion:Bercy:2
+Bibliothèque François Mitterrand:Cour Saint-Émilion:2
+Olympiades:Bibliothèque François Mitterrand:2
+Ligne 7bis:#66CC99:4
+6
+Pré Saint-Gervais:Danube:1
+Danube:Botzaris:2
+Botzaris:Buttes Chaumont:1
+Buttes Chaumont:Bolivar:1
+Bolivar:Jaurès:1
+Jaurès:Louis Blanc:1
+6
+Buttes Chaumont:Botzaris:1
+Bolivar:Buttes Chaumont:1
+Jaurès:Bolivar:1
+Louis Blanc:Jaurès:1
+Botzaris:Place des Fêtes:2
+Place des Fêtes:Pré Saint-Gervais:3
+Ligne 8:#CC99CC:2
+36
+Balard:Lourmel:1
+Lourmel:Boucicaut:1
+Boucicaut:Félix Faure:1
+Félix Faure:Commerce:2
+Commerce:La Motte-Picquet - Grenelle:1
+La Motte-Picquet - Grenelle:École Militaire:2
+École Militaire:La Tour-Maubourg:1
+La Tour-Maubourg:Invalides:1
+Invalides:Concorde:2
+Concorde:Madeleine:1
+Madeleine:Opéra:2
+Opéra:Richelieu - Drouot:1
+Richelieu - Drouot:Grands Boulevards:1
+Grands Boulevards:Bonne Nouvelle:1
+Bonne Nouvelle:Strasbourg - Saint-Denis:2
+Strasbourg - Saint-Denis:République:1
+République:Filles du Calvaire:2
+Filles du Calvaire:Saint-Sébastien - Froissart:1
+Saint-Sébastien - Froissart:Chemin Vert:1
+Chemin Vert:Bastille:1
+Bastille:Ledru-Rollin:1
+Ledru-Rollin:Faidherbe - Chaligny:2
+Faidherbe - Chaligny:Reuilly-Diderot:1
+Reuilly-Diderot:Montgallet:1
+Montgallet:Daumesnil:2
+Daumesnil:Michel Bizot:1
+Michel Bizot:Porte Dorée:1
+Porte Dorée:Porte de Charenton:2
+Porte de Charenton:Liberté:2
+Liberté:Charenton - Écoles:1
+Charenton - Écoles:École Vétérinaire de Maisons-Alfort:2
+École Vétérinaire de Maisons-Alfort:Maisons-Alfort - Stade:2
+Maisons-Alfort - Stade:Maisons-Alfort - Les Juilliottes:2
+Maisons-Alfort - Les Juilliottes:Créteil - L'Échat:2
+Créteil - L'Échat:Créteil - Université:1
+Créteil - Université:Créteil - Préfecture:3
+36
+Lourmel:Balard:1
+Boucicaut:Lourmel:1
+Félix Faure:Boucicaut:1
+Commerce:Félix Faure:2
+La Motte-Picquet - Grenelle:Commerce:1
+École Militaire:La Motte-Picquet - Grenelle:2
+La Tour-Maubourg:École Militaire:1
+Invalides:La Tour-Maubourg:1
+Concorde:Invalides:2
+Madeleine:Concorde:1
+Opéra:Madeleine:2
+Richelieu - Drouot:Opéra:1
+Grands Boulevards:Richelieu - Drouot:1
+Bonne Nouvelle:Grands Boulevards:1
+Strasbourg - Saint-Denis:Bonne Nouvelle:2
+République:Strasbourg - Saint-Denis:1
+Filles du Calvaire:République:2
+Saint-Sébastien - Froissart:Filles du Calvaire:1
+Chemin Vert:Saint-Sébastien - Froissart:1
+Bastille:Chemin Vert:1
+Ledru-Rollin:Bastille:1
+Faidherbe - Chaligny:Ledru-Rollin:2
+Reuilly-Diderot:Faidherbe - Chaligny:1
+Montgallet:Reuilly-Diderot:1
+Daumesnil:Montgallet:2
+Michel Bizot:Daumesnil:1
+Porte Dorée:Michel Bizot:1
+Porte de Charenton:Porte Dorée:2
+Liberté:Porte de Charenton:2
+Charenton - Écoles:Liberté:1
+École Vétérinaire de Maisons-Alfort:Charenton - Écoles:2
+Maisons-Alfort - Stade:École Vétérinaire de Maisons-Alfort:2
+Maisons-Alfort - Les Juilliottes:Maisons-Alfort - Stade:2
+Créteil - L'Échat:Maisons-Alfort - Les Juilliottes:2
+Créteil - Université:Créteil - L'Échat:1
+Créteil - Préfecture:Créteil - Université:3
+Ligne 9:#CCCC33:2
+36
+Pont de Sèvres:Billancourt:2
+Billancourt:Marcel Sembat:1
+Marcel Sembat:Porte de Saint-Cloud:2
+Porte de Saint-Cloud:Exelmans:2
+Exelmans:Michel-Ange - Molitor:1
+Michel-Ange - Molitor:Michel-Ange - Auteuil:1
+Michel-Ange - Auteuil:Jasmin:1
+Jasmin:Ranelagh:1
+Ranelagh:La Muette:1
+La Muette:Rue de la Pompe:2
+Rue de la Pompe:Trocadéro:2
+Trocadéro:Iéna:1
+Iéna:Alma - Marceau:1
+Alma - Marceau:Franklin D. Roosevelt:2
+Franklin D. Roosevelt:Saint-Philippe du Roule:1
+Saint-Philippe du Roule:Miromesnil:1
+Miromesnil:Saint-Augustin:2
+Saint-Augustin:Havre - Caumartin:1
+Havre - Caumartin:Chaussée d'Antin - La Fayette:1
+Chaussée d'Antin - La Fayette:Richelieu - Drouot:1
+Richelieu - Drouot:Grands Boulevards:1
+Grands Boulevards:Bonne Nouvelle:1
+Bonne Nouvelle:Strasbourg - Saint-Denis:2
+Strasbourg - Saint-Denis:République:1
+République:Oberkampf:2
+Oberkampf:Saint-Ambroise:1
+Saint-Ambroise:Voltaire:1
+Voltaire:Charonne:2
+Charonne:Rue des Boulets:1
+Rue des Boulets:Nation:1
+Nation:Buzenval:2
+Buzenval:Maraïchers:1
+Maraïchers:Porte de Montreuil:1
+Porte de Montreuil:Robespierre:2
+Robespierre:Croix de Chavaux:2
+Croix de Chavaux:Mairie de Montreuil:2
+36
+Billancourt:Pont de Sèvres:2
+Marcel Sembat:Billancourt:1
+Porte de Saint-Cloud:Marcel Sembat:2
+Exelmans:Porte de Saint-Cloud:2
+Michel-Ange - Molitor:Exelmans:1
+Michel-Ange - Auteuil:Michel-Ange - Molitor:1
+Jasmin:Michel-Ange - Auteuil:1
+Ranelagh:Jasmin:1
+La Muette:Ranelagh:1
+Rue de la Pompe:La Muette:2
+Trocadéro:Rue de la Pompe:2
+Iéna:Trocadéro:1
+Alma - Marceau:Iéna:1
+Franklin D. Roosevelt:Alma - Marceau:2
+Saint-Philippe du Roule:Franklin D. Roosevelt:1
+Miromesnil:Saint-Philippe du Roule:1
+Saint-Augustin:Miromesnil:2
+Havre - Caumartin:Saint-Augustin:1
+Chaussée d'Antin - La Fayette:Havre - Caumartin:1
+Richelieu - Drouot:Chaussée d'Antin - La Fayette:1
+Grands Boulevards:Richelieu - Drouot:1
+Bonne Nouvelle:Grands Boulevards:1
+Strasbourg - Saint-Denis:Bonne Nouvelle:2
+République:Strasbourg - Saint-Denis:1
+Oberkampf:République:2
+Saint-Ambroise:Oberkampf:1
+Voltaire:Saint-Ambroise:1
+Charonne:Voltaire:2
+Rue des Boulets:Charonne:1
+Nation:Rue des Boulets:1
+Buzenval:Nation:2
+Maraïchers:Buzenval:1
+Porte de Montreuil:Maraïchers:1
+Robespierre:Porte de Montreuil:2
+Croix de Chavaux:Robespierre:2
+Mairie de Montreuil:Croix de Chavaux:2
+Ligne 3bis:#66CCCC:4
+3
+Gambetta:Pelleport:1
+Pelleport:Saint-Fargeau:1
+Saint-Fargeau:Porte des Lilas:2
+3
+Pelleport:Gambetta:1
+Saint-Fargeau:Pelleport:1
+Porte des Lilas:Saint-Fargeau:2
+Ligne 1:#FFCC00:2
+24
+Grande Arche de la Défense:Esplanade de la Défense:2
+Esplanade de la Défense:Pont de Neuilly:1
+Pont de Neuilly:Les Sablons:2
+Les Sablons:Porte Maillot:1
+Porte Maillot:Argentine:2
+Argentine:Charles de Gaulle - Étoile:1
+Charles de Gaulle - Étoile:George V:1
+George V:Franklin D. Roosevelt:2
+Franklin D. Roosevelt:Champs-Élysées - Clémenceau:1
+Champs-Élysées - Clémenceau:Concorde:2
+Concorde:Tuileries:1
+Tuileries:Palais Royal - Musée du Louvre:1
+Palais Royal - Musée du Louvre:Louvre - Rivoli:1
+Louvre - Rivoli:Châtelet:2
+Châtelet:Hôtel de Ville:1
+Hôtel de Ville:Saint-Paul:1
+Saint-Paul:Bastille:2
+Bastille:Gare de Lyon:2
+Gare de Lyon:Reuilly-Diderot:2
+Reuilly-Diderot:Nation:2
+Nation:Porte de Vincennes:1
+Porte de Vincennes:Saint-Mandé:2
+Saint-Mandé:Bérault:1
+Bérault:Château de Vincennes:2
+24
+Esplanade de la Défense:Grande Arche de la Défense:2
+Pont de Neuilly:Esplanade de la Défense:1
+Les Sablons:Pont de Neuilly:2
+Porte Maillot:Les Sablons:1
+Argentine:Porte Maillot:2
+Charles de Gaulle - Étoile:Argentine:1
+George V:Charles de Gaulle - Étoile:1
+Franklin D. Roosevelt:George V:2
+Champs-Élysées - Clémenceau:Franklin D. Roosevelt:1
+Concorde:Champs-Élysées - Clémenceau:2
+Tuileries:Concorde:1
+Palais Royal - Musée du Louvre:Tuileries:1
+Louvre - Rivoli:Palais Royal - Musée du Louvre:1
+Châtelet:Louvre - Rivoli:2
+Hôtel de Ville:Châtelet:1
+Saint-Paul:Hôtel de Ville:1
+Bastille:Saint-Paul:2
+Gare de Lyon:Bastille:2
+Reuilly-Diderot:Gare de Lyon:2
+Nation:Reuilly-Diderot:2
+Porte de Vincennes:Nation:1
+Saint-Mandé:Porte de Vincennes:2
+Bérault:Saint-Mandé:1
+Château de Vincennes:Bérault:2
+Ligne 2:#0066CC:2
+24
+Porte Dauphine:Victor Hugo:1
+Victor Hugo:Charles de Gaulle - Étoile:2
+Charles de Gaulle - Étoile:Ternes:1
+Ternes:Courcelles:1
+Courcelles:Monceau:1
+Monceau:Villiers:2
+Villiers:Rome:1
+Rome:Place de Clichy:1
+Place de Clichy:Blanche:2
+Blanche:Pigalle:1
+Pigalle:Anvers:1
+Anvers:Barbès - Rochechouart:1
+Barbès - Rochechouart:La Chapelle:2
+La Chapelle:Stalingrad:1
+Stalingrad:Jaurès:2
+Jaurès:Colonel Fabien:1
+Colonel Fabien:Belleville:1
+Belleville:Couronnes:2
+Couronnes:Ménilmontant:1
+Ménilmontant:Père Lachaise:1
+Père Lachaise:Philippe Auguste:2
+Philippe Auguste:Alexandre Dumas:1
+Alexandre Dumas:Avron:1
+Avron:Nation:3
+24
+Victor Hugo:Porte Dauphine:1
+Charles de Gaulle - Étoile:Victor Hugo:2
+Ternes:Charles de Gaulle - Étoile:1
+Courcelles:Ternes:1
+Monceau:Courcelles:1
+Villiers:Monceau:2
+Rome:Villiers:1
+Place de Clichy:Rome:1
+Blanche:Place de Clichy:2
+Pigalle:Blanche:1
+Anvers:Pigalle:1
+Barbès - Rochechouart:Anvers:1
+La Chapelle:Barbès - Rochechouart:2
+Stalingrad:La Chapelle:1
+Jaurès:Stalingrad:2
+Colonel Fabien:Jaurès:1
+Belleville:Colonel Fabien:1
+Couronnes:Belleville:2
+Ménilmontant:Couronnes:1
+Père Lachaise:Ménilmontant:1
+Philippe Auguste:Père Lachaise:2
+Alexandre Dumas:Philippe Auguste:1
+Avron:Alexandre Dumas:1
+Nation:Avron:3
+Ligne 3:#999933:2
+24
+Pont de Levallois - Bécon:Anatole France:1
+Anatole France:Louise Michel:1
+Louise Michel:Porte de Champerret:2
+Porte de Champerret:Pereire:1
+Pereire:Wagram:1
+Wagram:Malesherbes:1
+Malesherbes:Villiers:2
+Villiers:Europe:1
+Europe:Saint-Lazare:1
+Saint-Lazare:Havre - Caumartin:2
+Havre - Caumartin:Opéra:1
+Opéra:Quatre-Septembre:1
+Quatre-Septembre:Bourse:1
+Bourse:Sentier:1
+Sentier:Réaumur - Sébastopol:2
+Réaumur - Sébastopol:Arts et Métiers:1
+Arts et Métiers:Temple:1
+Temple:République:1
+République:Parmentier:1
+Parmentier:Rue Saint-Maur:1
+Rue Saint-Maur:Père Lachaise:2
+Père Lachaise:Gambetta:2
+Gambetta:Porte de Bagnolet:1
+Porte de Bagnolet:Gallieni:2
+24
+Anatole France:Pont de Levallois - Bécon:1
+Louise Michel:Anatole France:1
+Porte de Champerret:Louise Michel:2
+Pereire:Porte de Champerret:1
+Wagram:Pereire:1
+Malesherbes:Wagram:1
+Villiers:Malesherbes:2
+Europe:Villiers:1
+Saint-Lazare:Europe:1
+Havre - Caumartin:Saint-Lazare:2
+Opéra:Havre - Caumartin:1
+Quatre-Septembre:Opéra:1
+Bourse:Quatre-Septembre:1
+Sentier:Bourse:1
+Réaumur - Sébastopol:Sentier:2
+Arts et Métiers:Réaumur - Sébastopol:1
+Temple:Arts et Métiers:1
+République:Temple:1
+Parmentier:République:1
+Rue Saint-Maur:Parmentier:1
+Père Lachaise:Rue Saint-Maur:2
+Gambetta:Père Lachaise:2
+Porte de Bagnolet:Gambetta:1
+Gallieni:Porte de Bagnolet:2
+Ligne 4:#CC3399:2
+25
+Porte de Clignancourt:Simplon:1
+Simplon:Marcadet - Poissonniers:1
+Marcadet - Poissonniers:Château Rouge:1
+Château Rouge:Barbès - Rochechouart:1
+Barbès - Rochechouart:Gare du Nord:2
+Gare du Nord:Gare de l'Est:1
+Gare de l'Est:Château d'Eau:2
+Château d'Eau:Strasbourg - Saint-Denis:1
+Strasbourg - Saint-Denis:Réaumur - Sébastopol:1
+Réaumur - Sébastopol:Étienne Marcel:1
+Étienne Marcel:Les Halles:1
+Les Halles:Châtelet:2
+Châtelet:Cité:1
+Cité:Saint-Michel:1
+Saint-Michel:Odéon:1
+Odéon:Saint-Germain-des-Prés:2
+Saint-Germain-des-Prés:Saint-Sulpice:1
+Saint-Sulpice:Saint-Placide:1
+Saint-Placide:Montparnasse - Bienvenüe:1
+Montparnasse - Bienvenüe:Vavin:1
+Vavin:Raspail:2
+Raspail:Denfert-Rochereau:1
+Denfert-Rochereau:Mouton-Duvernet:1
+Mouton-Duvernet:Alésia:1
+Alésia:Porte d'Orléans:2
+25
+Simplon:Porte de Clignancourt:1
+Marcadet - Poissonniers:Simplon:1
+Château Rouge:Marcadet - Poissonniers:1
+Barbès - Rochechouart:Château Rouge:1
+Gare du Nord:Barbès - Rochechouart:2
+Gare de l'Est:Gare du Nord:1
+Château d'Eau:Gare de l'Est:2
+Strasbourg - Saint-Denis:Château d'Eau:1
+Réaumur - Sébastopol:Strasbourg - Saint-Denis:1
+Étienne Marcel:Réaumur - Sébastopol:1
+Les Halles:Étienne Marcel:1
+Châtelet:Les Halles:2
+Cité:Châtelet:1
+Saint-Michel:Cité:1
+Odéon:Saint-Michel:1
+Saint-Germain-des-Prés:Odéon:2
+Saint-Sulpice:Saint-Germain-des-Prés:1
+Saint-Placide:Saint-Sulpice:1
+Montparnasse - Bienvenüe:Saint-Placide:1
+Vavin:Montparnasse - Bienvenüe:1
+Raspail:Vavin:2
+Denfert-Rochereau:Raspail:1
+Mouton-Duvernet:Denfert-Rochereau:1
+Alésia:Mouton-Duvernet:1
+Porte d'Orléans:Alésia:2
+Ligne 5:#CC6633:2
+21
+Bobigny - Pablo Picasso:Bobigny - Pantin - Raymond Queneau:3
+Bobigny - Pantin - Raymond Queneau:Église de Pantin:2
+Église de Pantin:Hoche:1
+Hoche:Porte de Pantin:2
+Porte de Pantin:Ourcq:2
+Ourcq:Laumière:1
+Laumière:Jaurès:1
+Jaurès:Stalingrad:1
+Stalingrad:Gare du Nord:3
+Gare du Nord:Gare de l'Est:2
+Gare de l'Est:Jacques Bonsergent:2
+Jacques Bonsergent:République:2
+République:Oberkampf:1
+Oberkampf:Richard-Lenoir:2
+Richard-Lenoir:Bréguet - Sabin:1
+Bréguet - Sabin:Bastille:1
+Bastille:Quai de la Rapée:2
+Quai de la Rapée:Gare d'Austerlitz:2
+Gare d'Austerlitz:Saint-Marcel:2
+Saint-Marcel:Campo-Formio:1
+Campo-Formio:Place d'Italie:2
+21
+Bobigny - Pantin - Raymond Queneau:Bobigny - Pablo Picasso:3
+Église de Pantin:Bobigny - Pantin - Raymond Queneau:2
+Hoche:Église de Pantin:1
+Porte de Pantin:Hoche:2
+Ourcq:Porte de Pantin:2
+Laumière:Ourcq:1
+Jaurès:Laumière:1
+Stalingrad:Jaurès:1
+Gare du Nord:Stalingrad:3
+Gare de l'Est:Gare du Nord:2
+Jacques Bonsergent:Gare de l'Est:2
+République:Jacques Bonsergent:2
+Oberkampf:République:1
+Richard-Lenoir:Oberkampf:2
+Bréguet - Sabin:Richard-Lenoir:1
+Bastille:Bréguet - Sabin:1
+Quai de la Rapée:Bastille:2
+Gare d'Austerlitz:Quai de la Rapée:2
+Saint-Marcel:Gare d'Austerlitz:2
+Campo-Formio:Saint-Marcel:1
+Place d'Italie:Campo-Formio:2
+Ligne 6:#66CC99:2
+27
+Charles de Gaulle - Étoile:Kléber:2
+Kléber:Boissière:1
+Boissière:Trocadéro:1
+Trocadéro:Passy:1
+Passy:Bir-Hakeim:1
+Bir-Hakeim:Dupleix:1
+Dupleix:La Motte-Picquet - Grenelle:1
+La Motte-Picquet - Grenelle:Cambronne:1
+Cambronne:Sèvres - Lecourbe:2
+Sèvres - Lecourbe:Pasteur:1
+Pasteur:Montparnasse - Bienvenüe:1
+Montparnasse - Bienvenüe:Edgar Quinet:2
+Edgar Quinet:Raspail:1
+Raspail:Denfert-Rochereau:1
+Denfert-Rochereau:Saint-Jacques:1
+Saint-Jacques:Glacière:1
+Glacière:Corvisart:2
+Corvisart:Place d'Italie:1
+Place d'Italie:Nationale:2
+Nationale:Chevaleret:1
+Chevaleret:Quai de la Gare:1
+Quai de la Gare:Bercy:1
+Bercy:Dugommier:2
+Dugommier:Daumesnil:1
+Daumesnil:Bel-Air:1
+Bel-Air:Picpus:1
+Picpus:Nation:2
+27
+Kléber:Charles de Gaulle - Étoile:2
+Boissière:Kléber:1
+Trocadéro:Boissière:1
+Passy:Trocadéro:1
+Bir-Hakeim:Passy:1
+Dupleix:Bir-Hakeim:1
+La Motte-Picquet - Grenelle:Dupleix:1
+Cambronne:La Motte-Picquet - Grenelle:1
+Sèvres - Lecourbe:Cambronne:2
+Pasteur:Sèvres - Lecourbe:1
+Montparnasse - Bienvenüe:Pasteur:1
+Edgar Quinet:Montparnasse - Bienvenüe:2
+Raspail:Edgar Quinet:1
+Denfert-Rochereau:Raspail:1
+Saint-Jacques:Denfert-Rochereau:1
+Glacière:Saint-Jacques:1
+Corvisart:Glacière:2
+Place d'Italie:Corvisart:1
+Nationale:Place d'Italie:2
+Chevaleret:Nationale:1
+Quai de la Gare:Chevaleret:1
+Bercy:Quai de la Gare:1
+Dugommier:Bercy:2
+Daumesnil:Dugommier:1
+Bel-Air:Daumesnil:1
+Picpus:Bel-Air:1
+Nation:Picpus:2
+Ligne 7:#FF99CC:2
+37
+La Courneuve - 8 Mai 1945:Fort d'Aubervilliers:1
+Fort d'Aubervilliers:Aubervilliers - Pantin - Quatre Chemins:2
+Aubervilliers - Pantin - Quatre Chemins:Porte de la Villette:2
+Porte de la Villette:Corentin Cariou:2
+Corentin Cariou:Crimée:1
+Crimée:Riquet:1
+Riquet:Stalingrad:1
+Stalingrad:Louis Blanc:2
+Louis Blanc:Château-Landon:1
+Château-Landon:Gare de l'Est:1
+Gare de l'Est:Poissonnière:2
+Poissonnière:Cadet:1
+Cadet:Le Peletier:2
+Le Peletier:Chaussée d'Antin - La Fayette:1
+Chaussée d'Antin - La Fayette:Opéra:2
+Opéra:Pyramides:1
+Pyramides:Palais Royal - Musée du Louvre:1
+Palais Royal - Musée du Louvre:Pont Neuf:2
+Pont Neuf:Châtelet:1
+Châtelet:Pont Marie:2
+Pont Marie:Sully - Morland:1
+Sully - Morland:Jussieu:2
+Jussieu:Place Monge:1
+Place Monge:Censier - Daubenton:1
+Censier - Daubenton:Les Gobelins:1
+Les Gobelins:Place d'Italie:2
+Place d'Italie:Tolbiac:1
+Tolbiac:Maison Blanche:1
+Maison Blanche:Porte d'Italie:1
+Porte d'Italie:Porte de Choisy:2
+Porte de Choisy:Porte d'Ivry:1
+Porte d'Ivry:Pierre et Marie Curie:1
+Pierre et Marie Curie:Mairie d'Ivry:3
+Maison Blanche:Le Kremlin-Bicêtre:2
+Le Kremlin-Bicêtre:Villejuif - Léo Lagrange:2
+Villejuif - Léo Lagrange:Villejuif - Paul Vaillant-Couturier:2
+Villejuif - Paul Vaillant-Couturier:Villejuif - Louis Aragon:2
+37
+Fort d'Aubervilliers:La Courneuve - 8 Mai 1945:1
+Aubervilliers - Pantin - Quatre Chemins:Fort d'Aubervilliers:2
+Porte de la Villette:Aubervilliers - Pantin - Quatre Chemins:2
+Corentin Cariou:Porte de la Villette:2
+Crimée:Corentin Cariou:1
+Riquet:Crimée:1
+Stalingrad:Riquet:1
+Louis Blanc:Stalingrad:2
+Château-Landon:Louis Blanc:1
+Gare de l'Est:Château-Landon:1
+Poissonnière:Gare de l'Est:2
+Cadet:Poissonnière:1
+Le Peletier:Cadet:2
+Chaussée d'Antin - La Fayette:Le Peletier:1
+Opéra:Chaussée d'Antin - La Fayette:2
+Pyramides:Opéra:1
+Palais Royal - Musée du Louvre:Pyramides:1
+Pont Neuf:Palais Royal - Musée du Louvre:2
+Châtelet:Pont Neuf:1
+Pont Marie:Châtelet:2
+Sully - Morland:Pont Marie:1
+Jussieu:Sully - Morland:2
+Place Monge:Jussieu:1
+Censier - Daubenton:Place Monge:1
+Les Gobelins:Censier - Daubenton:1
+Place d'Italie:Les Gobelins:2
+Tolbiac:Place d'Italie:1
+Maison Blanche:Tolbiac:1
+Porte d'Italie:Maison Blanche:1
+Porte de Choisy:Porte d'Italie:2
+Porte d'Ivry:Porte de Choisy:1
+Pierre et Marie Curie:Porte d'Ivry:1
+Mairie d'Ivry:Pierre et Marie Curie:3
+Le Kremlin-Bicêtre:Maison Blanche:2
+Villejuif - Léo Lagrange:Le Kremlin-Bicêtre:2
+Villejuif - Paul Vaillant-Couturier:Villejuif - Léo Lagrange:2
+Villejuif - Louis Aragon:Villejuif - Paul Vaillant-Couturier:2
