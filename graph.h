@@ -1,6 +1,11 @@
 #ifndef GRAPH
 #define GRAPH
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <limits.h>
+
 struct _Sommet
 {
     int distance;

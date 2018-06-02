@@ -1,7 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdbool.h>
-#include <limits.h>
 #include "graph.h"
 
 mat_graphe * allouer_matrice(int nb_lig, int nb_col){

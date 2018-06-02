@@ -1,16 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <limits.h>
+#include "fonctions.h"
 
-extern reseau * RESEAU;
+extern reseau RESEAU;
 
 
 int get_id_from_name(char * name) {
     int i;
-    for(i = 0; i < RESEAU->nb_station; i++) {
-        if(strcmp(name, *(RESEAU + i)->name)) {
-            return *(RESEAU+i)->id;
+    for(i = 0; i < RESEAU.nb_station; i++) {
+        if(strcmp(name, (RESEAU.stations + i)->name)) {
+            return (RESEAU.stations + i)->id;
         }
     }
     return -1;
@@ -18,9 +15,9 @@ int get_id_from_name(char * name) {
 
 station * get_station_from_id(int id) {
     int i;
-    for(i = 0; i < RESEAU->nb_station; i++) {
-        if(id == *(RESEAU + i)->id) {
-            return (RESEAU+i);
+    for(i = 0; i < RESEAU.nb_station; i++) {
+        if(id == (RESEAU.stations + i)->id) {
+            return (RESEAU.stations + i);
         }
     }
     return NULL;
@@ -28,9 +25,9 @@ station * get_station_from_id(int id) {
 
 station * get_station_from_name(char * name) {
     int i;
-    for(i = 0; i < RESEAU->nb_station; i++) {
-        if(strcmp(name, *(RESEAU + i)->name)) {
-            return (RESEAU+i);
+    for(i = 0; i < RESEAU.nb_station; i++) {
+        if(strcmp(name, (RESEAU.stations + i)->name)) {
+            return (RESEAU.stations + i);
         }
     }
     return NULL;
@@ -65,10 +62,10 @@ void load_file(char * filename) {
     //    printf("%s", line);
     //}
 
-    free(RESEAU);
+    //free(RESEAU);
     read = getline(&line, &len, fp);
     if(read != -1) {
-        sscanf((char*)read, "%d", &(RESEAU->nb_station));
+        sscanf((char*)read, "%d", &(RESEAU.nb_station));
     } else {
         printf("An error occured while reading the number of stations.\n");
         return;
@@ -83,7 +80,7 @@ void load_file(char * filename) {
 
 void chemin_le_plus_court(station * s_depart)
 {
-	station *tab_stat = (station*) malloc(RESEAU->nb_station*sizeof(station));
+	station *tab_stat = (station*) malloc(RESEAU.nb_station*sizeof(station));
     //Initialisation
 
 

@@ -1,15 +1,18 @@
+#ifndef STATIONS
+#define STATIONS
+
 typedef struct Station station;
 typedef struct Ligne ligne;
 //typedef struct Sous_stat sous_stat;
 
 struct Station
 {
-    float lon;
-    float lat;
-    char * name;
-    int id;
-    int nb_stat_adj;
-    station ** stat_adj; 
+  float lon;
+  float lat;
+  char * name;
+  int id;
+  int nb_stat_adj;
+  station * stat_adj; 
 };
 
 //struct Ligne
@@ -21,24 +24,14 @@ struct Station
   //      station * stat;
 //};
 
-struct _mat_graphe
-{
-    int nb_lignes ;
-    int nb_colonnes ;
-    double * contenu ;
-};
-
-typedef struct _mat_graphe mat_graphe;
-
 struct Reseau
 {
-    int nb_station;
-    station ** stat;
+  int nb_station;
+  station * stations;
 };
 
 typedef struct Reseau reseau;
 
-int main()
-{
-    return 0;
-}
+
+
+#endif
