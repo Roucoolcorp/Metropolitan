@@ -3,7 +3,7 @@
 #include <string.h>
 #include <limits.h>
 
-extern reseau RESEAU;
+extern reseau * RESEAU;
 
 
 int get_id_from_name(char * name) {
@@ -50,10 +50,40 @@ int degre_positif(int s, mat_graphe *p_graphe)
     return degre;
 }
 
+void load_file(char * filename) {
+    FILE * fp;
+    char * line = NULL;
+    size_t len = 0;
+    ssize_t read;
 
-void chemin_le_plus_court(station * s_depart, reseau * R)
+    fp = fopen("/etc/motd", "r");
+    if (fp == NULL)
+        exit(EXIT_FAILURE);
+
+    //while ((read = getline(&line, &len, fp)) != -1) {
+    //    printf("Retrieved line of length %zu :\n", read);
+    //    printf("%s", line);
+    //}
+
+    free(RESEAU);
+    read = getline(&line, &len, fp);
+    if(read != -1) {
+        sscanf((char*)read, "%d", &(RESEAU->nb_station));
+    } else {
+        printf("An error occured while reading the number of stations.\n");
+        return;
+    }
+
+    fclose(fp);
+    if (line) {
+        free(line);
+    }
+}
+
+
+void chemin_le_plus_court(station * s_depart)
 {
-	station *tab_stat = (station*) malloc(R->nb_station*sizeof(station));
+	station *tab_stat = (station*) malloc(RESEAU->nb_station*sizeof(station));
     //Initialisation
 
 

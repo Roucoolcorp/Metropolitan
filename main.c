@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-reseau RESEAU;
+reseau * RESEAU;
 
 int main() {
 	return 0;
