@@ -53,28 +53,78 @@ void load_file(char * filename) {
     size_t len = 0;
     ssize_t read;
 
-    fp = fopen("/etc/motd", "r");
-    if (fp == NULL)
-        exit(EXIT_FAILURE);
+    printf("\n--- Reading the database file ---\n");
+
+    fp = fopen(filename, "r");
+    if (fp == NULL) {
+        printf("An error occured while loading the database.\n");
+        return;
+    }
 
     //while ((read = getline(&line, &len, fp)) != -1) {
     //    printf("Retrieved line of length %zu :\n", read);
     //    printf("%s", line);
     //}
 
-    //free(RESEAU);
-    read = getline(&line, &len, fp);
-    if(read != -1) {
-        sscanf((char*)read, "%d", &(RESEAU.nb_station));
+
+    // Reading the number of stations
+    if((read = getline(&line, &len, fp)) != -1) {
+        sscanf(line, "%d", &(RESEAU.nb_station));
+        printf("There are %d stations\n", RESEAU.nb_station);
     } else {
         printf("An error occured while reading the number of stations.\n");
         return;
     }
 
-    fclose(fp);
-    if (line) {
-        free(line);
+    // Loading the station name and its coords
+    int i = 0;
+    free(RESEAU.stations);
+    RESEAU.stations = malloc(sizeof(station) * RESEAU.nb_station);
+    for(i = 1; i <= RESEAU.nb_station; i++) {
+        if((read = getline(&line, &len, fp)) != -1) {
+            station * st = malloc(sizeof(station));
+            st->id = i;
+            sscanf(line, "%s:%f:%f", (st->name), &(st->lng), &(st->lat));
+            *(RESEAU.stations + i) = *st;
+        }
     }
+    printf("%d stations loaded\n", i-1);
+
+    // Loading the number of lines
+    if((read = getline(&line, &len, fp)) != -1) {
+        sscanf(line, "%d", &(RESEAU.nb_ligne));
+        printf("There are %d lignes\n", RESEAU.nb_ligne);
+    } else {
+        printf("An error occured while reading the number of lines.\n");
+        return;
+    }
+
+    // Loading the lines
+    i = 0;
+    free(RESEAU.lignes);
+    RESEAU.lignes = malloc(sizeof(ligne) * RESEAU.nb_ligne);
+    for(i = 1; i <= RESEAU.nb_ligne; i++) {
+        if((read = getline(&line, &len, fp)) != -1) {
+            ligne * li = malloc(sizeof(ligne));
+            li->id = i;
+            sscanf(line, "%s:%s:%d", (li->name), &(li->couleur));
+            *(RESEAU.lignes + i) = *li;
+
+            // Read the number of stations
+            read = getline(&line, &len, fp);
+            int nbr_station_aller = 0;
+            sscanf(line, "%d", &nbr_station_aller);
+            // Read the line data
+            int j;
+            for(j = 0; j < nbr_station_aller; j++) {
+                
+            }
+        }
+    }
+    printf("%d lines loaded\n", i-1);
+
+    free(line);
+    free(fp);
 }
 
 

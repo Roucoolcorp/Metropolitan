@@ -7,5 +7,6 @@
 reseau RESEAU;
 
 int main() {
+	load_file("bdd.txt");
 	return 0;
 }

@@ -7,7 +7,7 @@ typedef struct Ligne ligne;
 
 struct Station
 {
-  float lon;
+  float lng;
   float lat;
   char * name;
   int id;
@@ -15,19 +15,22 @@ struct Station
   station * stat_adj; 
 };
 
-//struct Ligne
-//{
- //       int nb_station_aller;
-  //      int nb_station_retour;
-//      char * nom;
- //       char * couleur;
-  //      station * stat;
-//};
+struct Ligne
+{
+  int id;
+  int nb_station_aller;
+  int nb_station_retour;
+  char * nom;
+  char * couleur;
+  station * stat;
+};
 
 struct Reseau
 {
   int nb_station;
   station * stations;
+  int nb_ligne;
+  ligne * lignes;
 };
 
 typedef struct Reseau reseau;

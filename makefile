@@ -1,4 +1,4 @@
-all : clean comp clear run clean
+all : clean comp run clean
 
 comp : main.o fonctions.o graph.o stations.o
 	gcc -o exec main.o fonctions.o graph.o stations.o -Wall -lm
