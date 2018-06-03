@@ -11,8 +11,9 @@
 int get_id_from_name(char * name);
 station * get_station_from_id(int id);
 station * get_station_from_name(char * name);
-int degre_positif(int s, mat_graph *p_graphe);
+int positive_degrees(int s, mat_graph *p_graphe);
 void load_file(char * filename);
-void chemin_le_plus_court(station * s_depart);
-
+void shortest_way(int id_start, int id_end, mat_graph *p_graphe);
+int get_station_start();
+int get_station_end();
 #endif

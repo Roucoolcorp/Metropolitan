@@ -33,7 +33,7 @@ station * get_station_from_name(char * name) {
     return NULL;
 }
 
-int degre_positif(int s, mat_graph *p_graphe)
+int positive_degrees(int s, mat_graph *p_graphe)
 {
     int degre=0;
     int i;
@@ -156,6 +156,7 @@ void load_file(char * filename) {
         }
     }
     printf("%d lines loaded\n", i);
+    printf("\n");
 
     //displayGraph(MAT_RESEAU);
 
@@ -164,12 +165,115 @@ void load_file(char * filename) {
 }
 
 
-void chemin_le_plus_court(station * s_depart)
+void shortest_way(int id_start, int id_end, mat_graph *p_graphe)
 {
-	station *tab_stat = (station*) malloc(RESEAU.nb_station*sizeof(station));
+	 Sommet *tab_sommet = (Sommet*) malloc(p_graphe->nbrCols*sizeof(Sommet));
     //Initialisation
+    int i;
+    if(id_start == id_end)
+    {
+        printf("Ŷou already are at this station\n");
+    }
+    for(i= 0; i<p_graphe->nbrCols;i++)
+    {
+        if(i==id_start)
+        {
+            tab_sommet[i].distance=0;
+        }
+        else
+        {
+            tab_sommet[i].distance=INT_MAX;
+        }
+        tab_sommet[i].pred=-1;//il n'y pas de sommet pour chaque prédécésseur
+        tab_sommet[i].marque=false;//pas de sommet marqué
+        tab_sommet[i].degrePositif=positive_degrees(i,p_graphe); //calculer des degrés positifs
+    }
+    int min = 0;
+    int x1;
+    //Affichage de la premiere ligne
+    //printf("               | d(0)      | d(1)      | d(2)      | d(3)      | d(4)      | d(5)      ||| P(0)      | P(1)      | P(2)      | P(3)      | P(4)      | P(5)      \n");
+  //  printf("Initialisation | %10d| %0d| %10d| %10d| %10d| %10d||| %10d| %10d| %10d| %10d| %10d| %10d|\n", tab_sommet[0].distance,tab_sommet[1].distance,tab_sommet[2].distance,tab_sommet[3].distance,tab_sommet[4].distance,tab_sommet[5].distance,tab_sommet[0].pred,tab_sommet[1].pred,tab_sommet[2].pred,tab_sommet[3].pred,tab_sommet[4].pred,tab_sommet[5].pred);
+    //Loop: shortest way
+    while(min != INT_MAX)
+    {
 
+        //d(x) = min for a marked node
+        bool trouv = false;
+        i=0;
+        x1=0;
+        while((i<p_graphe->nbrCols) && (!trouv))
+        {
+            if((tab_sommet[i].distance==min)&&(tab_sommet[i].marque==false))
+            {
+                x1=i;
+                tab_sommet[i].marque=true;
+                trouv = true;
+            }
+            i++;
+        }
+        int* tab_succ = (int*) malloc(sizeof(int)*tab_sommet[x1].degrePositif);
+        int j = 0;
+        for(i=0;i<p_graphe->nbrCols;i++)
+        {
+            if(getElement(p_graphe,x1,i)!=-1)
+            {
+                tab_succ[j]=i;
+                j++;
+            }
+        }
+        //new distances
+        int y;
+        for(y=0;y<tab_sommet[x1].degrePositif;y++)
+        {
+            if(tab_sommet[x1].distance+getElement(p_graphe,x1,tab_succ[y])<tab_sommet[tab_succ[y]].distance)
+            {
+                tab_sommet[tab_succ[y]].distance=tab_sommet[x1].distance+getElement(p_graphe,x1,tab_succ[y]);
+                tab_sommet[tab_succ[y]].pred = x1;
+            }
+        }
+    free(tab_succ);
+     //   printf("               | %10d| %10d| %10d| %10d| %10d| %10d||| %10d| %10d| %10d| %10d| %10d| %10d|\n", tab_sommet[0].distance,tab_sommet[1].distance,tab_sommet[2].distance,tab_sommet[3].distance,tab_sommet[4].distance,tab_sommet[5].distance,tab_sommet[0].pred,tab_sommet[1].pred,tab_sommet[2].pred,tab_sommet[3].pred,tab_sommet[4].pred,tab_sommet[5].pred);
 
-
-
+        //x successors
+        min = INT_MAX;
+        for(i = 0; i<p_graphe->nbrCols;i++)
+        {
+            if(tab_sommet[i].marque ==false)
+            {
+                if(tab_sommet[i].distance<min && tab_sommet[i].marque==false)
+                {
+                    min = tab_sommet[i].distance;
+                }
+            }
+        }
+    }
+    station station_start;
+    station station_end;
+    station_end.name = get_station_from_id(id_end)->name;
+    station_end.id = get_station_from_id(id_end)->id;  
+    station_start.name = get_station_from_id(id_start)->name;
+    station_start.id = get_station_from_id(id_start)->id;      
+    printf("You need %d minutes to go to %s from %s\n", tab_sommet[id_end].distance, station_end.name, station_start.name);
 }
+
+int get_station_start()
+{
+    char * name_start = malloc(100);
+    printf("Where are you ?\n");
+    scanf("%[^\n]", name_start);
+    return get_id_from_name(name_start);
+    free(name_start);
+    //return 0;
+} 
+
+int get_station_end()
+{
+    char * name_end = malloc(100);
+    printf("Where are you going?\n");
+    scanf("%[^\n]", name_end);
+    return get_id_from_name(name_end);
+    free(name_end);
+    //return 0;
+}
+
+
