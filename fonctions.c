@@ -1,12 +1,12 @@
 #include "fonctions.h"
 
 extern reseau RESEAU;
-
+extern mat_graph * MAT_RESEAU;
 
 int get_id_from_name(char * name) {
     int i;
     for(i = 0; i < RESEAU.nb_station; i++) {
-        if(strcmp(name, (RESEAU.stations + i)->name)) {
+        if(strcmp(name, (RESEAU.stations + i)->name) == 0) {
             return (RESEAU.stations + i)->id;
         }
     }
@@ -26,20 +26,20 @@ station * get_station_from_id(int id) {
 station * get_station_from_name(char * name) {
     int i;
     for(i = 0; i < RESEAU.nb_station; i++) {
-        if(strcmp(name, (RESEAU.stations + i)->name)) {
+        if(strcmp(name, (RESEAU.stations + i)->name) == 0) {
             return (RESEAU.stations + i);
         }
     }
     return NULL;
 }
 
-int degre_positif(int s, mat_graphe *p_graphe)
+int degre_positif(int s, mat_graph *p_graphe)
 {
     int degre=0;
     int i;
-    for(i=0; i< p_graphe->nb_colonnes;i++)
+    for(i=0; i< p_graphe->nbrCols;i++)
     {
-        if(recuperer_element(p_graphe,s,i)!=-1)
+        if(getElement(p_graphe,s,i)!=-1)
 	{
             degre++;
         }
@@ -55,16 +55,15 @@ void load_file(char * filename) {
 
     printf("\n--- Reading the database file ---\n");
 
+    // Cleaning the mat graphe
+    free(MAT_RESEAU);
+
+    // Opening the file
     fp = fopen(filename, "r");
     if (fp == NULL) {
         printf("An error occured while loading the database.\n");
         return;
     }
-
-    //while ((read = getline(&line, &len, fp)) != -1) {
-    //    printf("Retrieved line of length %zu :\n", read);
-    //    printf("%s", line);
-    //}
 
 
     // Reading the number of stations
@@ -76,19 +75,30 @@ void load_file(char * filename) {
         return;
     }
 
+    // Allocating mat graph
+    MAT_RESEAU = allocateMatrix(RESEAU.nb_station, RESEAU.nb_station); 
+
     // Loading the station name and its coords
-    int i = 0;
+    int i;
     free(RESEAU.stations);
     RESEAU.stations = malloc(sizeof(station) * RESEAU.nb_station);
-    for(i = 1; i <= RESEAU.nb_station; i++) {
+    for(i = 0; i < RESEAU.nb_station; i++) {
         if((read = getline(&line, &len, fp)) != -1) {
-            station * st = malloc(sizeof(station));
-            st->id = i;
-            sscanf(line, "%s:%f:%f", (st->name), &(st->lng), &(st->lat));
-            *(RESEAU.stations + i) = *st;
+            //station * st = malloc(sizeof(station));
+            station st;
+            st.name = malloc(100);
+            st.id = i;
+            sscanf(line, "%[^:]:%f:%f", (st.name), &(st.lng), &(st.lat));
+            *(RESEAU.stations + i) = st;
         }
     }
-    printf("%d stations loaded\n", i-1);
+    printf("%d stations loaded\n", i);
+
+    // Feeding the first mat graph data
+    feedMatrix(MAT_RESEAU, INT_MAX); // Set the maximum distance between all stations by default
+    for(i = 0; i < RESEAU.nb_station; i++) { // Set the minimum distance between a station and itself
+        setElement(0, MAT_RESEAU, i, i);
+    }
 
     // Loading the number of lines
     if((read = getline(&line, &len, fp)) != -1) {
@@ -100,28 +110,54 @@ void load_file(char * filename) {
     }
 
     // Loading the lines
-    i = 0;
     free(RESEAU.lignes);
     RESEAU.lignes = malloc(sizeof(ligne) * RESEAU.nb_ligne);
-    for(i = 1; i <= RESEAU.nb_ligne; i++) {
+    for(i = 0; i < RESEAU.nb_ligne; i++) {
         if((read = getline(&line, &len, fp)) != -1) {
-            ligne * li = malloc(sizeof(ligne));
-            li->id = i;
-            sscanf(line, "%s:%s:%d", (li->name), &(li->couleur));
-            *(RESEAU.lignes + i) = *li;
+            ligne li;
+            li.id = i;
+            li.nom = malloc(100);
+            li.couleur = malloc(10);
+            sscanf(line, "%[^:]:%[^:]:%d", (li.nom), (li.couleur), &(li.truc_ou_on_sait_pas_ce_que_cest));
+            *(RESEAU.lignes + i) = li;
 
-            // Read the number of stations
+            printf("%s (%s)\n", li.nom, li.couleur);
+
+            // Read the number of stations for way #1
             read = getline(&line, &len, fp);
             int nbr_station_aller = 0;
             sscanf(line, "%d", &nbr_station_aller);
-            // Read the line data
+            // Read the line data for way #1
             int j;
             for(j = 0; j < nbr_station_aller; j++) {
-                
+                read = getline(&line, &len, fp);
+                char * station1 = malloc(100);
+                char * station2 = malloc(100);
+                int distance = -2;
+                sscanf(line, "%[^:]:%[^:]:%d", station1, station2, &distance);
+                setElement(distance, MAT_RESEAU, get_id_from_name(station1), get_id_from_name(station2));
             }
+
+            // Read the number of stations for way #2
+            read = getline(&line, &len, fp);
+            int nbr_station_retour = 0;
+            sscanf(line, "%d", &nbr_station_retour);
+            // Read the line data for way #2
+            for(j = 0; j < nbr_station_retour; j++) {
+                read = getline(&line, &len, fp);
+                char * station1 = malloc(100);
+                char * station2 = malloc(100);
+                int distance = -2;
+                sscanf(line, "%[^:]:%[^:]:%d", station1, station2, &distance);
+                setElement(distance, MAT_RESEAU, get_id_from_name(station1), get_id_from_name(station2));
+            }
+
+            printf("  %d connexions for way #1 and %d connexions for way #2\n", nbr_station_aller, nbr_station_retour);
         }
     }
-    printf("%d lines loaded\n", i-1);
+    printf("%d lines loaded\n", i);
+
+    //displayGraph(MAT_RESEAU);
 
     free(line);
     free(fp);

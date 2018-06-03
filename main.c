@@ -5,6 +5,7 @@
 #include "stations.h"
 
 reseau RESEAU;
+mat_graph * MAT_RESEAU;
 
 int main() {
 	load_file("bdd.txt");

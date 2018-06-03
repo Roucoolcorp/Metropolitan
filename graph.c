@@ -1,180 +1,154 @@
 #include "graph.h"
 
-mat_graphe * allouer_matrice(int nb_lig, int nb_col){
+mat_graph * allocateMatrix(int nb_lig, int nb_col){
+	mat_graph *mat;
+	mat = (mat_graph *)  malloc(sizeof(mat_graph));
+	mat->nbrLines = nb_lig;
+	mat->nbrCols = nb_col;
+	mat ->contenu = (double *) malloc(nb_lig*nb_col*sizeof(double));
 
-	mat_graphe *nouveau;
-	nouveau = (mat_graphe *)  malloc(sizeof(mat_graphe));
-	nouveau->nb_lignes = nb_lig;
-	nouveau->nb_colonnes = nb_col;
-	nouveau ->contenu = (double *) malloc(nb_lig*nb_col*sizeof(double));
-
-	return nouveau;	
+	return mat;	
 }
 
-void positionner_element(double valeur, mat_graphe * p_graphe, int ligne, int colonne){
-
-	int position = ligne * p_graphe->nb_colonnes+colonne;
-	p_graphe->contenu[position] = valeur;
+void setElement(double valeur, mat_graph * p_graph, int ligne, int colonne){
+	int position = ligne * p_graph->nbrCols+colonne;
+	p_graph->contenu[position] = valeur;
 
 }
 
-double recuperer_element(mat_graphe * p_graphe, int ligne, int colonne){
-
-	int position = ligne * p_graphe->nb_colonnes+colonne;
-	int valeur = p_graphe->contenu[position];
+double getElement(mat_graph * p_graph, int ligne, int colonne){
+	int position = ligne * p_graph->nbrCols+colonne;
+	int valeur = p_graph->contenu[position];
 	return valeur;
 }
 
-void afficher_graphe(mat_graphe* p_graphe){
-
-	int compteur = 0;
-	int repetition;
-
-	for(repetition = 0; repetition < p_graphe->nb_colonnes*p_graphe->nb_lignes;repetition++){
-		if(compteur == p_graphe->nb_colonnes){
-			compteur = 0;
+void displayGraph(mat_graph* p_graph){
+	int cmp = 0;
+	int rep;
+	for(rep = 0; rep < p_graph->nbrCols*p_graph->nbrLines;rep++){
+		if(cmp == p_graph->nbrCols){
+			cmp = 0;
 			printf("\n");
 		}
-		printf("%6.1f ",p_graphe->contenu[repetition]);
-		compteur++;
+		if(p_graph->contenu[rep] == INT_MAX) {
+			printf("INF");
+		} else {
+			printf("%3.1f ",p_graph->contenu[rep]);
+		}
+		cmp++;
 	}
 	printf("\n");
 }
-mat_graphe* Add_s(mat_graphe * p_graphe ){
-	
-	double *nouveau;
-	int repetition;
-	int repetition2 = 0;
-	nouveau = (double*) malloc((p_graphe->nb_lignes+1)*(p_graphe->nb_colonnes+1)*sizeof(double));
-	
-	p_graphe->nb_colonnes = p_graphe->nb_colonnes+1;
-	p_graphe->nb_lignes = p_graphe->nb_lignes+1;
 
-	for(repetition = 0; repetition <p_graphe->nb_colonnes*p_graphe->nb_lignes;repetition++){
-		if((repetition+1)%p_graphe->nb_colonnes==0){
-			nouveau[repetition]=0;
-		}
-		else if(repetition < (p_graphe->nb_lignes)*(p_graphe->nb_colonnes+1)){
-			nouveau[repetition] = p_graphe->contenu[repetition2];
-			repetition2++;
-		}
-		else{
-			nouveau[repetition]=0;
+mat_graph* addSommet(mat_graph * p_graph ){
+	double *mat;
+	int rep;
+	int rep2 = 0;
+	mat = (double*) malloc((p_graph->nbrLines+1)*(p_graph->nbrCols+1)*sizeof(double));
+	
+	p_graph->nbrCols = p_graph->nbrCols+1;
+	p_graph->nbrLines = p_graph->nbrLines+1;
+
+	for(rep = 0; rep <p_graph->nbrCols*p_graph->nbrLines;rep++){
+		if((rep+1)%p_graph->nbrCols==0){
+			mat[rep]=0;
+		} else if(rep < (p_graph->nbrLines)*(p_graph->nbrCols+1)){
+			mat[rep] = p_graph->contenu[rep2];
+			rep2++;
+		} else{
+			mat[rep]=0;
 		}
 	} 
-	free(p_graphe->contenu);
-	p_graphe->contenu = nouveau;
-	return p_graphe;
+	free(p_graph->contenu);
+	p_graph->contenu = mat;
+	return p_graph;
 }
-mat_graphe* Supp_s(mat_graphe * p_graphe, int sommet){
 
-	double *nouveau;
-	int compteur = 0;
-	int repetition2 = 0;
-	int repetition;
-	int compteur2 = 0;
-	nouveau = (double *) malloc((p_graphe->nb_lignes-1)*(p_graphe->nb_colonnes-1)*sizeof(double));
+mat_graph* delSommet(mat_graph * p_graph, int sommet){
+	double *mat;
+	int cmp = 0;
+	int rep2 = 0;
+	int rep;
+	int cmp2 = 0;
+	mat = (double *) malloc((p_graph->nbrLines-1)*(p_graph->nbrCols-1)*sizeof(double));
 
-	for(repetition = 0;repetition < ((p_graphe->nb_lignes-1)*(p_graphe->nb_colonnes-1));repetition++){
+	for(rep = 0;rep < ((p_graph->nbrLines-1)*(p_graph->nbrCols-1));rep++){
 
-		if(compteur2==sommet){
-			repetition2+=p_graphe->nb_colonnes;
-			compteur2++;
+		if(cmp2 == sommet){
+			rep2 += p_graph->nbrCols;
+			cmp2++;
 		}
-		if(compteur==sommet){
-			repetition2+=1;
-			compteur++;
+		if(cmp == sommet){
+			rep2 += 1;
+			cmp++;
 		}
-		printf("repetition2 = %d\n",repetition2);
-		nouveau[repetition]=p_graphe->contenu[repetition2];
-		repetition2++;
-		compteur = (compteur+1)%(p_graphe->nb_colonnes);
-		printf("compteur1 = %d\n",compteur);
-		if(compteur==0){
-			compteur2++;
-			printf("compteur2 = %d\n",compteur2);
+		printf("rep2 = %d\n",rep2);
+		mat[rep]=p_graph->contenu[rep2];
+		rep2++;
+		cmp = (cmp+1)%(p_graph->nbrCols);
+		printf("cmp1 = %d\n",cmp);
+		if(cmp == 0){
+			cmp2++;
+			printf("cmp2 = %d\n",cmp2);
 		}
 
 	}
-	free(p_graphe->contenu);
-	p_graphe->contenu = nouveau;
-	p_graphe->nb_colonnes = p_graphe->nb_colonnes-1;
-	p_graphe->nb_lignes = p_graphe->nb_lignes-1;
-	return p_graphe;
+	free(p_graph->contenu);
+	p_graph->contenu = mat;
+	p_graph->nbrCols = p_graph->nbrCols-1;
+	p_graph->nbrLines = p_graph->nbrLines-1;
+	return p_graph;
 }
-void Add_arc(mat_graphe * p_graphe, int sommet1 , int sommet2,double valeur){
-	
-	int position = sommet1*(p_graphe->nb_colonnes)+sommet2;
-	p_graphe->contenu[position]=valeur;
 
-}
-void Supp_a(mat_graphe * p_graphe, int sommet1 , int sommet2){
-
-	int position = sommet1*(p_graphe->nb_colonnes)+sommet2;
-	p_graphe->contenu[position]=0;
-
-}
-_Bool exists(mat_graphe * p_graphe, int sommet){
-
-	_Bool existence = 0;
-	if(sommet < p_graphe->nb_colonnes){
-		existence = 1;
-	}
-	return existence;
-	
-}
-_Bool exa(mat_graphe * p_graphe, int sommet1 , int sommet2){
-
-	_Bool existence = 0;
-	int position = sommet1*(p_graphe->nb_colonnes)+sommet2;
-	if(p_graphe->contenu[position]==1){
-		existence = 1;
-	}
-	return existence;
+void addArc(mat_graph * p_graph, int sommet1 , int sommet2,double valeur){
+	int position = sommet1*(p_graph->nbrCols)+sommet2;
+	p_graph->contenu[position]=valeur;
 
 }
 
-int di(mat_graphe *p_graphe, int sommet){
-	if(exists(p_graphe,sommet)==1){
+void delArc(mat_graph * p_graph, int sommet1 , int sommet2){
+	int position = sommet1*(p_graph->nbrCols)+sommet2;
+	p_graph->contenu[position] = 0;
 
-	
-	int repetition;
-	int position;
-	int arc_entrant = 0;
-	for(repetition = 0; repetition < p_graphe->nb_lignes;repetition++){
-		position = repetition*(p_graphe->nb_colonnes)+sommet;
-		if(p_graphe->contenu[position]==1){
-			arc_entrant++;
+}
+
+_Bool sommetExists(mat_graph * p_graph, int sommet){
+	return (sommet < p_graph->nbrCols);
+}
+
+int arcsEntrants(mat_graph *p_graph, int sommet){
+	if(sommetExists(p_graph,sommet) == 1){	
+		int rep;
+		int position;
+		int arc_entrant = 0;
+		for(rep = 0; rep < p_graph->nbrLines;rep++){
+			position = rep*(p_graph->nbrCols)+sommet;
+			if(p_graph->contenu[position]==1){
+				arc_entrant++;
+			}
 		}
-	}
-	return arc_entrant;
-	}
-	else{
-		printf("Erreur");
+		return arc_entrant;
+	} else{
 		exit(-1);
 	}
 }
-int de(mat_graphe *p_graphe,int sommet){
-	int repetition;
+
+int arcsSortants(mat_graph *p_graph,int sommet){
+	int rep;
 	int position;
 	int arc_sortant = 0;
-	for(repetition = 0; repetition < p_graphe->nb_lignes;repetition++){
-		position = sommet*(p_graphe->nb_colonnes)+repetition;
-		if(p_graphe->contenu[position]==1){
+	for(rep = 0; rep < p_graph->nbrLines;rep++){
+		position = sommet*(p_graph->nbrCols)+rep;
+		if(p_graph->contenu[position] == 1){
 			arc_sortant++;
 		}
 	}
 	return arc_sortant;
 }
-int degree(mat_graphe *p_graphe, int sommet){
-	return (de(p_graphe,sommet)+di(p_graphe,sommet));
+
+void feedMatrix(mat_graph *p_graph, long value){
+	int rep;
+	for(rep = 0; rep < p_graph->nbrCols*p_graph->nbrLines;rep++){
+		p_graph->contenu[rep] = value;
+	}
 }
-
-/*void chemin(mat_graphe *p_graphe,int sommet1, int sommet2){
-	int booleen;
-	int tab[p_graphe->nb_col];
-	tab[0]=sommet1;
-	int compteur = 0;
-	
-
-}*/

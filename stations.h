@@ -20,6 +20,7 @@ struct Ligne
   int id;
   int nb_station_aller;
   int nb_station_retour;
+  int truc_ou_on_sait_pas_ce_que_cest;
   char * nom;
   char * couleur;
   station * stat;

@@ -8,33 +8,33 @@
 
 struct _Sommet
 {
-    int distance;
-    int pred;
-    bool marque;
-    int degre_positif;
+	int distance;
+	int pred;
+	bool marque;
+	int degrePositif;
 };
 typedef struct _Sommet Sommet;
 
-struct _mat_graphe
+struct _mat_graph
 {
-int nb_lignes ;
-int nb_colonnes ;
-double * contenu ;
+	int nbrLines ;
+	int nbrCols ;
+	double * contenu ;
 };
 
-typedef struct _mat_graphe mat_graphe;
+typedef struct _mat_graph mat_graph;
 
-mat_graphe * allouer_matrice(int nb_lig, int nb_col);
-void positionner_element(double valeur, mat_graphe * p_graphe, int ligne, int colonne);
-double recuperer_element(mat_graphe * p_graphe, int ligne, int colonne);
-void afficher_graphe(mat_graphe* p_graphe);
-mat_graphe* Add_s(mat_graphe * p_graphe );
-mat_graphe* Supp_s(mat_graphe * p_graphe, int sommet);
-void Add_arc(mat_graphe * p_graphe, int sommet1 , int sommet2,double valeur);
-void Supp_a(mat_graphe * p_graphe, int sommet1 , int sommet2);
-_Bool exists(mat_graphe * p_graphe, int sommet);
-_Bool exa(mat_graphe * p_graphe, int sommet1 , int sommet2);
-int di(mat_graphe *p_graphe, int sommet);
-int de(mat_graphe *p_graphe,int sommet);
-int degree(mat_graphe *p_graphe, int sommet);
+mat_graph * allocateMatrix(int nb_lig, int nb_col);
+void setElement(double valeur, mat_graph * p_graph, int ligne, int colonne);
+double getElement(mat_graph * p_graph, int ligne, int colonne);
+void displayGraph(mat_graph* p_graph);
+mat_graph* addSommet(mat_graph * p_graph );
+mat_graph* delSommet(mat_graph * p_graph, int sommet);
+void addArc(mat_graph * p_graph, int sommet1 , int sommet2,double valeur);
+void delArc(mat_graph * p_graph, int sommet1 , int sommet2);
+_Bool sommetExists(mat_graph * p_graph, int sommet);
+int arcsEntrants(mat_graph *p_graph, int sommet);
+int arcsSortants(mat_graph *p_graph,int sommet);
+int deg(mat_graph *p_graph, int sommet);
+void feedMatrix(mat_graph *p_graph, long value);
 #endif
