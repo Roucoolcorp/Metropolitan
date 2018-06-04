@@ -7,6 +7,9 @@
 
 reseau RESEAU;
 mat_graph * MAT_RESEAU;
+station ** stations_list;
+int tab_id[4];
+int index_tab = 0;
 
 /*int main() {
 	load_file("bdd.txt");
@@ -49,26 +52,18 @@ void FillRect(SDL_Surface * ecran, int x, int y, int w, int h, int color) {
 	SDL_FillRect(ecran, &rect, color);
 }
 
-void display_station(SDL_Surface * ecran, station * st) {
+void display_station(SDL_Surface * ecran, station * st, int selected) {
 	float x, y;
-	//x = (st->lat - 2.222890) * 4600;
-	//y = (180 - st->lng - 48.910703)*8.1;
-	//y = (180 - st->lng - 48.910703) * 1 + 812;
-
-	//x = (1 + st->lng - 48.910703) * 1000;
-	//y = (st->lat - 2.222890) * 1000;
-
-	// Centre = 48.853327, 2.348923
-	//y = ((st->lat - 2.336733) / (2.344367 - 2.336733)) * (812 - 1);
-	//x = (st->lat - 2.222997) * (1120 - 0) / (2.474476 - 2.222997) + 2.222997;
 	x = map(st->lat, 2.222997, 2.474476, 0, 1120);
-
-	//En haut = 48.926113, 2.357569
-	//En bas = 48.798310, 2.381936
 	y = map(st->lng, 48.794310, 48.926113, 812, 0);
-	//printf("truc = %f\n", ((st->lat - 2.336733) / (2.344367 - 2.336733)));
-	printf("lat = %f | lng = %f | x = %d | y = %d\n", st->lat, st->lng, (int)x, (int)y);
-	FillRect(ecran, (int)x, (int)y, 10, 10, 0xAA2211);
+	if(y > 812) {
+		return;
+	}
+	if(selected) {
+		FillRect(ecran, (int)x, (int)y, 10, 10, 0xAA2211);
+	} else {
+		FillRect(ecran, (int)x, (int)y, 10, 10, 0x888888);
+	}
 	SDL_Flip(ecran);
 }
 
@@ -79,20 +74,54 @@ void display_picture(SDL_Surface * ecran, SDL_Surface * image, int x, int y) {
     SDL_BlitSurface(image, NULL, ecran, &position);
 }
 
-void ui() {
-	SDL_WM_SetCaption("Metropolitan", NULL);
-    SDL_Surface *ecran = SDL_SetVideoMode(1120, 812, 32, SDL_HWSURFACE);
-    SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 255, 255, 255));
-    SDL_Surface * paris = SDL_LoadBMP("carte_paris.bmp");
+void handle_click(int x, int y, SDL_Surface * ecran) {
+	if(y > 812) {
+		printf("Clear\n");
+		draw_base_screen(ecran);
+		return;
+	}
+
+	int i;
+	for(i = 0; i < RESEAU.nb_station; i++){
+		station * st = RESEAU.stations + i;
+		int station_x, station_y;
+		station_x = map(st->lat, 2.222997, 2.474476, 0, 1120);
+		station_y = map(st->lng, 48.794310, 48.926113, 812, 0);
+		if(x <= station_x + 10 && x >= station_x - 10 && y <= station_y + 10 && y >= station_y - 10) {
+			printf("Found : %s\n", st->name);
+			display_station(ecran, st, 1);
+			tab_id[index_tab] = st->id;
+			index_tab++;
+			index_tab%=4;
+			if(index_tab == 0) {
+				optimal_way(tab_id);
+			}
+			return;
+		}
+	}
+	printf("Not found\n");
+}
+
+void draw_base_screen(SDL_Surface * ecran) {
+	SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 255, 255, 255));
+	SDL_Surface * paris = SDL_LoadBMP("carte_paris.bmp");
     display_picture(ecran, paris, 0, 0);
     SDL_Flip(ecran);
-    //display_station(ecran, get_station_from_name("Pierre et Marie Curie"));
-    //display_station(ecran, get_station_from_name("Philippe Auguste"));
-    //display_station(ecran, get_station_from_name("Argentine"));
+    
+    // Draw all stations
     int i;
     for(i = 0; i < RESEAU.nb_station; i++) {
-    	display_station(ecran, RESEAU.stations + i);
+    	display_station(ecran, RESEAU.stations + i, 0);
     }
+
+    SDL_FreeSurface(paris);
+}
+
+void ui() {
+	SDL_WM_SetCaption("Metropolitan", NULL);
+    SDL_Surface *ecran = SDL_SetVideoMode(1120, 1000, 32, SDL_HWSURFACE);
+    SDL_Surface * paris = SDL_LoadBMP("carte_paris.bmp");
+    draw_base_screen(ecran);
 	int continuer = 1;
 	SDL_Event event;
 	while (continuer)
@@ -102,6 +131,11 @@ void ui() {
 		{
 			case SDL_QUIT:
 				continuer = 0;
+				break;
+
+			case SDL_MOUSEBUTTONUP:
+				handle_click(event.motion.x, event.motion.y, ecran);
+				break;
 		}
 	}
 }
@@ -112,7 +146,6 @@ int main() {
 	load_file("bdd.txt");
 	//printf("%s\n", get_line_from_station_name("Pierre et Marie Curie")->nom);
 	int id_station_start, id_station_end;
-	int tab_id[4];
 	id_station_start = 1;//get_station_start();
 	//id_station_end = get_station_end();
 	//shortest_way(id_station_start, id_station_end, MAT_RESEAU);
