@@ -11,6 +11,10 @@ station ** stations_list;
 int tab_id[4];
 int index_tab = 0;
 int tab_optimal_way[4];
+int* tab_succ = NULL;
+int tab_succ_size;
+int * tab_chemin;
+int tab_chemin_size;
 
 /*int main() {
 	load_file("bdd.txt");
@@ -78,7 +82,7 @@ void display_picture(SDL_Surface * ecran, SDL_Surface * image, int x, int y) {
 void handle_click(int x, int y, SDL_Surface * ecran) {
 	if(x >= 900 && x <= 900 + 180 && y >= 850 && y <= 850 + 50){
 		printf("Bouton\n");
-		
+
 		return;
 	} else if(y > 812) {
 		printf("Clear\n");
@@ -100,6 +104,7 @@ void handle_click(int x, int y, SDL_Surface * ecran) {
 			index_tab%=4;
 			if(index_tab == 0) {
 				optimal_way(tab_id);
+				display_way(ecran);
 			}
 			return;
 		}
@@ -125,7 +130,10 @@ void draw_base_screen(SDL_Surface * ecran) {
 }
 
 void display_way(SDL_Surface * ecran) {
-
+	int i;
+	for(i = 0; i < tab_chemin_size; i++) {
+		printf("%d\n", tab_chemin[i]);
+	}
 }
 
 void ui() {

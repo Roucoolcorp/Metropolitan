@@ -4,6 +4,10 @@ extern reseau RESEAU;
 extern mat_graph * MAT_RESEAU;
 extern int tab_id[4];
 extern int tab_optimal_way[4];
+extern int* tab_succ;
+extern int tab_succ_size;
+extern int * tab_chemin;
+extern int tab_chemin_size;
 
 int positive_degrees(int s, mat_graph *p_graphe)
 {
@@ -175,6 +179,9 @@ int shortest_way(int id_start, int id_end, mat_graph *p_graphe)
     }
     int min = 0;
     int x1;
+    int mini_index = 0;
+    tab_chemin = malloc(300 * sizeof(int));
+    tab_chemin_size = 0;
     //Affichage de la premiere ligne
     //printf("               | d(0)      | d(1)      | d(2)      | d(3)      | d(4)      | d(5)      ||| P(0)      | P(1)      | P(2)      | P(3)      | P(4)      | P(5)      \n");
   //  printf("Initialisation | %10d| %0d| %10d| %10d| %10d| %10d||| %10d| %10d| %10d| %10d| %10d| %10d|\n", tab_sommet[0].distance,tab_sommet[1].distance,tab_sommet[2].distance,tab_sommet[3].distance,tab_sommet[4].distance,tab_sommet[5].distance,tab_sommet[0].pred,tab_sommet[1].pred,tab_sommet[2].pred,tab_sommet[3].pred,tab_sommet[4].pred,tab_sommet[5].pred);
@@ -191,12 +198,19 @@ int shortest_way(int id_start, int id_end, mat_graph *p_graphe)
             if((tab_sommet[i].distance==min)&&(tab_sommet[i].marque==false))
             {
                 x1=i;
+                tab_chemin[mini_index] = i;
+                mini_index++;
+                tab_chemin_size++;
                 tab_sommet[i].marque=true;
                 trouv = true;
             }
             i++;
         }
-        int* tab_succ = (int*) malloc(sizeof(int)*tab_sommet[x1].degrePositif);
+        if(tab_succ != NULL) {
+            free(tab_succ);
+        }
+        tab_succ = (int*) malloc(sizeof(int)*tab_sommet[x1].degrePositif);
+        tab_succ_size = tab_sommet[x1].degrePositif;
         int j = 0;
         for(i=0;i<p_graphe->nbrCols;i++)
         {
@@ -216,9 +230,7 @@ int shortest_way(int id_start, int id_end, mat_graph *p_graphe)
                 tab_sommet[tab_succ[y]].pred = x1;
             }
         }
-    free(tab_succ);
      //   printf("               | %10d| %10d| %10d| %10d| %10d| %10d||| %10d| %10d| %10d| %10d| %10d| %10d|\n", tab_sommet[0].distance,tab_sommet[1].distance,tab_sommet[2].distance,tab_sommet[3].distance,tab_sommet[4].distance,tab_sommet[5].distance,tab_sommet[0].pred,tab_sommet[1].pred,tab_sommet[2].pred,tab_sommet[3].pred,tab_sommet[4].pred,tab_sommet[5].pred);
-
         //x successors
         min = INT_MAX;
         for(i = 0; i<p_graphe->nbrCols;i++)
