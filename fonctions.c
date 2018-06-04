@@ -6,10 +6,11 @@ extern mat_graph * MAT_RESEAU;
 int get_id_from_name(char * name) {
     int i;
     for(i = 0; i < RESEAU.nb_station; i++) {
-        if(strcmp(name, (RESEAU.stations + i)->name) == 0) {
+        if(strcmp((char *)name, (char *)(RESEAU.stations + i)->name) == 0) {
             return (RESEAU.stations + i)->id;
         }
     }
+    printf("Not found!\n");
     return -1;
 }
 
@@ -270,7 +271,7 @@ int get_station_end()
 {
     char * name_end = malloc(100);
     printf("Where are you going?\n");
-    scanf("%[^\n]", name_end);
+    scanf("\n%[^\n]", name_end);
     return get_id_from_name(name_end);
     free(name_end);
     //return 0;
