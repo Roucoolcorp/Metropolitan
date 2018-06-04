@@ -36,6 +36,11 @@ struct Reseau
 
 typedef struct Reseau reseau;
 
-
+int is_on_same_line(station * st1, station * st2);
+ligne * get_line_from_station_name(char * name);
+ligne * get_line_from_station(station * st);
+int get_id_from_name(char * name);
+station * get_station_from_id(int id);
+station * get_station_from_name(char * name);
 
 #endif
