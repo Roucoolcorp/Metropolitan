@@ -2,6 +2,8 @@
 
 extern reseau RESEAU;
 extern mat_graph * MAT_RESEAU;
+extern int tab_id[4];
+extern int tab_optimal_way[4];
 
 int positive_degrees(int s, mat_graph *p_graphe)
 {
@@ -273,11 +275,11 @@ int get_next_station()
     free(next_station);
 }
 
-void optimal_way(int * tab_id)            //AB AC AD BC BD CD
+
+int * optimal_way(int * tab_id)            //AB AC AD BC BD CD
 {
     int i;
     int min[6];
-    int * id_optimal_way = malloc(100);
     int minimum = 300;
     min[0] = shortest_way(tab_id[0], tab_id[1], MAT_RESEAU); //AB
     min[1] = shortest_way(tab_id[0], tab_id[2], MAT_RESEAU); //AC
@@ -285,70 +287,71 @@ void optimal_way(int * tab_id)            //AB AC AD BC BD CD
     min[3] = shortest_way(tab_id[1], tab_id[2], MAT_RESEAU); //BC
     min[4] = shortest_way(tab_id[1], tab_id[3], MAT_RESEAU); //BD
     min[5] = shortest_way(tab_id[2], tab_id[3], MAT_RESEAU); //CD
-    id_optimal_way[0] = tab_id[0];
+    tab_optimal_way[0] = tab_id[0];
     if((min[0] + min[3] + min[5]) < minimum) //AB BC CD
     {
         minimum = (min[0] + min[3] + min[5]);
-        id_optimal_way[1] = tab_id[1];
-        id_optimal_way[2] = tab_id[2];
-        id_optimal_way[3] = tab_id[3];
+        tab_optimal_way[1] = tab_id[1];
+        tab_optimal_way[2] = tab_id[2];
+        tab_optimal_way[3] = tab_id[3];
     }
 
     if((min[0] + min[4] + min[5]) < minimum) //AB BD DC
     {
         minimum = (min[0] + min[4] + min[5]);
-        id_optimal_way[1] = tab_id[1];
-        id_optimal_way[2] = tab_id[3];
-        id_optimal_way[3] = tab_id[2];
+        tab_optimal_way[1] = tab_id[1];
+        tab_optimal_way[2] = tab_id[3];
+        tab_optimal_way[3] = tab_id[2];
     }
 
     if((min[1] + min[3] + min[4]) < minimum) //AC CB BD
     {
         minimum = (min[1] + min[3] + min[4]);
-        id_optimal_way[1] = tab_id[2];
-        id_optimal_way[2] = tab_id[1];
-        id_optimal_way[3] = tab_id[3];
+        tab_optimal_way[1] = tab_id[2];
+        tab_optimal_way[2] = tab_id[1];
+        tab_optimal_way[3] = tab_id[3];
     }
 
     if((min[1] + min[5] + min[4]) < minimum) //AC CD DB
     {
         minimum = (min[1] + min[5] + min[4]);
-        id_optimal_way[1] = tab_id[2];
-        id_optimal_way[2] = tab_id[3];
-        id_optimal_way[3] = tab_id[1];
+        tab_optimal_way[1] = tab_id[2];
+        tab_optimal_way[2] = tab_id[3];
+        tab_optimal_way[3] = tab_id[1];
     }
 
     if((min[2] + min[5] + min[3]) < minimum) //AD DC CB
     {
         minimum = (min[2] + min[5] + min[3]);
-        id_optimal_way[1] = tab_id[3];
-        id_optimal_way[2] = tab_id[2];
-        id_optimal_way[3] = tab_id[1];
+        tab_optimal_way[1] = tab_id[3];
+        tab_optimal_way[2] = tab_id[2];
+        tab_optimal_way[3] = tab_id[1];
     }
     
     if((min[2] + min[4] + min[3]) < minimum) //AD DB BC
     {
         minimum = (min[2] + min[4] + min[3]);
-        id_optimal_way[1] = tab_id[3];
-        id_optimal_way[2] = tab_id[1];
-        id_optimal_way[3] = tab_id[2];
+        tab_optimal_way[1] = tab_id[3];
+        tab_optimal_way[2] = tab_id[1];
+        tab_optimal_way[3] = tab_id[2];
     }
     station station_start;
     station station_1;
     station station_2;
     station station_3;
-    station_start.name = get_station_from_id(id_optimal_way[0])->name;
-    station_start.id = get_station_from_id(id_optimal_way[0])->id;
-    station_1.name = get_station_from_id(id_optimal_way[1])->name;
-    station_1.id = get_station_from_id(id_optimal_way[1])->id;
-    station_2.name = get_station_from_id(id_optimal_way[2])->name;
-    station_2.id = get_station_from_id(id_optimal_way[2])->id;
-    station_3.name = get_station_from_id(id_optimal_way[3])->name;
-    station_3.id = get_station_from_id(id_optimal_way[3])->id;
+    station_start.name = get_station_from_id(tab_optimal_way[0])->name;
+    station_start.id = get_station_from_id(tab_optimal_way[0])->id;
+    station_1.name = get_station_from_id(tab_optimal_way[1])->name;
+    station_1.id = get_station_from_id(tab_optimal_way[1])->id;
+    station_2.name = get_station_from_id(tab_optimal_way[2])->name;
+    station_2.id = get_station_from_id(tab_optimal_way[2])->id;
+    station_3.name = get_station_from_id(tab_optimal_way[3])->name;
+    station_3.id = get_station_from_id(tab_optimal_way[3])->id;
 
     printf("coucou\n");
 
     printf("For the most optimized way from %s, you have to go first to %s then to %s and finally to %s, with a total of %d minutes\n", station_start.name, station_1.name, station_2.name, station_3.name, minimum);
+    return min;
 }
 
 

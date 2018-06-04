@@ -10,6 +10,7 @@ mat_graph * MAT_RESEAU;
 station ** stations_list;
 int tab_id[4];
 int index_tab = 0;
+int tab_optimal_way[4];
 
 /*int main() {
 	load_file("bdd.txt");
@@ -75,7 +76,11 @@ void display_picture(SDL_Surface * ecran, SDL_Surface * image, int x, int y) {
 }
 
 void handle_click(int x, int y, SDL_Surface * ecran) {
-	if(y > 812) {
+	if(x >= 900 && x <= 900 + 180 && y >= 850 && y <= 850 + 50){
+		printf("Bouton\n");
+		
+		return;
+	} else if(y > 812) {
 		printf("Clear\n");
 		draw_base_screen(ecran);
 		return;
@@ -106,6 +111,8 @@ void draw_base_screen(SDL_Surface * ecran) {
 	SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 255, 255, 255));
 	SDL_Surface * paris = SDL_LoadBMP("carte_paris.bmp");
     display_picture(ecran, paris, 0, 0);
+    SDL_Surface * calculer = SDL_LoadBMP("calculer_distance.bmp");
+    display_picture(ecran, calculer, 900, 850);
     SDL_Flip(ecran);
     
     // Draw all stations
@@ -115,6 +122,10 @@ void draw_base_screen(SDL_Surface * ecran) {
     }
 
     SDL_FreeSurface(paris);
+}
+
+void display_way(SDL_Surface * ecran) {
+
 }
 
 void ui() {
