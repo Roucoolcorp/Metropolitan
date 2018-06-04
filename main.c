@@ -9,6 +9,9 @@ mat_graph * MAT_RESEAU;
 
 int main() {
 	load_file("bdd.txt");
+
+	printf("%s\n", get_line_from_station_name("Pierre et Marie Curie")->nom);
+
 	int id_station_start, id_station_end;
 	id_station_start = get_station_start();
 	id_station_end = get_station_end();

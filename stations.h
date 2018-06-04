@@ -20,10 +20,10 @@ struct Ligne
   int id;
   int nb_station_aller;
   int nb_station_retour;
-  int truc_ou_on_sait_pas_ce_que_cest;
+  int attente_metro;
   char * nom;
   char * couleur;
-  station * stat;
+  station * stations;
 };
 
 struct Reseau

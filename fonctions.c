@@ -10,7 +10,6 @@ int get_id_from_name(char * name) {
             return (RESEAU.stations + i)->id;
         }
     }
-    printf("Not found!\n");
     return -1;
 }
 
@@ -27,10 +26,12 @@ station * get_station_from_id(int id) {
 station * get_station_from_name(char * name) {
     int i;
     for(i = 0; i < RESEAU.nb_station; i++) {
-        if(strcmp(name, (RESEAU.stations + i)->name) == 0) {
+        if(strcmp((char *)name, (char *)(RESEAU.stations + i)->name) == 0) {
+            //printf("Found %s!\n", (RESEAU.stations + i)->name);
             return (RESEAU.stations + i);
         }
     }
+    //printf("Not found!\n");
     return NULL;
 }
 
@@ -119,7 +120,7 @@ void load_file(char * filename) {
             li.id = i;
             li.nom = malloc(100);
             li.couleur = malloc(10);
-            sscanf(line, "%[^:]:%[^:]:%d", (li.nom), (li.couleur), &(li.truc_ou_on_sait_pas_ce_que_cest));
+            sscanf(line, "%[^:]:%[^:]:%d", (li.nom), (li.couleur), &(li.attente_metro));
             *(RESEAU.lignes + i) = li;
 
             printf("%s (%s)\n", li.nom, li.couleur);
@@ -128,6 +129,7 @@ void load_file(char * filename) {
             read = getline(&line, &len, fp);
             int nbr_station_aller = 0;
             sscanf(line, "%d", &nbr_station_aller);
+            li.stations = malloc(sizeof(station) * nbr_station_aller);
             // Read the line data for way #1
             int j;
             for(j = 0; j < nbr_station_aller; j++) {
@@ -136,6 +138,7 @@ void load_file(char * filename) {
                 char * station2 = malloc(100);
                 int distance = -2;
                 sscanf(line, "%[^:]:%[^:]:%d", station1, station2, &distance);
+                *(li.stations + i) = *get_station_from_name(station1); // Add the station to the line's stations
                 setElement(distance, MAT_RESEAU, get_id_from_name(station1), get_id_from_name(station2));
             }
 
@@ -173,7 +176,7 @@ void shortest_way(int id_start, int id_end, mat_graph *p_graphe)
     int i;
     if(id_start == id_end)
     {
-        printf("Ŷou already are at this station\n");
+        printf("You already are at this station\n");
     }
     for(i= 0; i<p_graphe->nbrCols;i++)
     {
