@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <SDL/SDL.h>
+#include <SDL/SDL_ttf.h>
 #include "fonctions.h"
 #include "graph.h"
 #include "stations.h"
@@ -79,10 +80,66 @@ void display_picture(SDL_Surface * ecran, SDL_Surface * image, int x, int y) {
     SDL_BlitSurface(image, NULL, ecran, &position);
 }
 
+void display_way(SDL_Surface * ecran) {
+	TTF_Font * police = TTF_OpenFont("Ubuntu-L.ttf", 25);
+	SDL_Color couleurNoire = {0, 0, 0};
+	SDL_Surface * texte = TTF_RenderUTF8_Blended(police, "Trajet à suivre :", couleurNoire);
+	SDL_Surface * instruction = NULL;
+	display_picture(ecran, texte, 50, 833);
+	SDL_Flip(ecran);
+	int i;
+	int mini_index = 0;
+	for(i = tab_chemin_size - 1; i >= 0; i--) {
+		if(i < tab_chemin_size - 1 && i > 0) {
+			printf("Inf\n");
+			if(is_on_same_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1])) || is_on_same_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i + 1]))) {
+				printf("Same line\n");
+				continue;
+			} else {
+				printf("Not same line\n");
+			}
+		} else {
+			printf("First or last\n");
+		}
+		printf("%d\n", tab_chemin[i]);
+		char * tmp = malloc(1000);
+		if(i == 0) {
+			strcat(tmp, "Arrivé à ");
+			strcat(tmp, get_station_from_id(tab_chemin[i])->name);
+		} else {
+			strcat(tmp, "Prendre le métro à ");
+			strcat(tmp, get_station_from_id(tab_chemin[i])->name);
+			//if(is_on_same_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1]))) {
+			if(get_common_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1])) != NULL) {
+				strcat(tmp, " (");
+				strcat(tmp, get_common_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1]))->nom);
+				strcat(tmp, ")");
+			} else {
+				strcat(tmp, " (");
+				strcat(tmp, (get_line_from_station(get_station_from_id(tab_chemin[i - 1])))[0]->nom);
+				strcat(tmp, ")");
+			}
+			/*} else {
+				if(is_on_same_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i + 1]))) {
+					strcat(tmp, " (");
+					strcat(tmp, get_common_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i + 1]))->nom);
+					strcat(tmp, ")");
+				}
+			}*/
+		}
+		instruction = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
+		display_picture(ecran, instruction, 50, 860 + mini_index * 30);
+		mini_index++;
+		SDL_Flip(ecran);
+	}
+	TTF_CloseFont(police);
+}
+
 void handle_click(int x, int y, SDL_Surface * ecran) {
 	if(x >= 900 && x <= 900 + 180 && y >= 850 && y <= 850 + 50){
 		printf("Bouton\n");
-
+		shortest_way(tab_id[0], tab_id[1], MAT_RESEAU);
+		display_way(ecran);
 		return;
 	} else if(y > 812) {
 		printf("Clear\n");
@@ -129,16 +186,9 @@ void draw_base_screen(SDL_Surface * ecran) {
     SDL_FreeSurface(paris);
 }
 
-void display_way(SDL_Surface * ecran) {
-	int i;
-	for(i = 0; i < tab_chemin_size; i++) {
-		printf("%d\n", tab_chemin[i]);
-	}
-}
-
 void ui() {
 	SDL_WM_SetCaption("Metropolitan", NULL);
-    SDL_Surface *ecran = SDL_SetVideoMode(1120, 1000, 32, SDL_HWSURFACE);
+    SDL_Surface *ecran = SDL_SetVideoMode(1120, 1200, 32, SDL_HWSURFACE);
     SDL_Surface * paris = SDL_LoadBMP("carte_paris.bmp");
     draw_base_screen(ecran);
 	int continuer = 1;
@@ -161,6 +211,7 @@ void ui() {
 
 int main() {
 	SDL_Init(SDL_INIT_VIDEO);
+	TTF_Init();
 
 	load_file("bdd.txt");
 	//printf("%s\n", get_line_from_station_name("Pierre et Marie Curie")->nom);
@@ -177,6 +228,7 @@ int main() {
 
     ui();
 
+    TTF_Quit();
     SDL_Quit();
     return 0;
 }

@@ -1,10 +1,10 @@
 all : clean comp run clean
 
 comp : main.o fonctions.o graph.o stations.o
-	gcc -o exec main.o fonctions.o graph.o stations.o -Wall -lm `sdl-config --cflags --libs`
+	gcc -o exec main.o fonctions.o graph.o stations.o -Wall -lm `sdl-config --cflags --libs` -lSDL_ttf
 
 main.o : main.c
-	gcc -o main.o -c main.c -Wall -lm `sdl-config --cflags --libs`
+	gcc -o main.o -c main.c -Wall -lm `sdl-config --cflags --libs` -lSDL_ttf
 
 fonctions.o : fonctions.c
 	gcc -o fonctions.o -c fonctions.c -Wall -lm

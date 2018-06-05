@@ -198,9 +198,9 @@ int shortest_way(int id_start, int id_end, mat_graph *p_graphe)
             if((tab_sommet[i].distance==min)&&(tab_sommet[i].marque==false))
             {
                 x1=i;
-                tab_chemin[mini_index] = i;
+                /*tab_chemin[mini_index] = i;
                 mini_index++;
-                tab_chemin_size++;
+                tab_chemin_size++;*/
                 tab_sommet[i].marque=true;
                 trouv = true;
             }
@@ -230,6 +230,7 @@ int shortest_way(int id_start, int id_end, mat_graph *p_graphe)
                 tab_sommet[tab_succ[y]].pred = x1;
             }
         }
+
      //   printf("               | %10d| %10d| %10d| %10d| %10d| %10d||| %10d| %10d| %10d| %10d| %10d| %10d|\n", tab_sommet[0].distance,tab_sommet[1].distance,tab_sommet[2].distance,tab_sommet[3].distance,tab_sommet[4].distance,tab_sommet[5].distance,tab_sommet[0].pred,tab_sommet[1].pred,tab_sommet[2].pred,tab_sommet[3].pred,tab_sommet[4].pred,tab_sommet[5].pred);
         //x successors
         min = INT_MAX;
@@ -244,6 +245,19 @@ int shortest_way(int id_start, int id_end, mat_graph *p_graphe)
             }
         }
     }
+
+    tab_chemin[0] = id_end;
+    tab_chemin_size = 1;
+    mini_index = 1;
+    int current_index = id_end;
+     while(current_index != id_start && current_index != -1) {
+        tab_chemin[mini_index] = tab_sommet[current_index].pred;
+        current_index = tab_sommet[current_index].pred;
+        //printf("mini_index = %d | current_index = %d\n", mini_index, current_index);
+        mini_index++;
+        tab_chemin_size++;
+    }
+
     station station_start;
     station station_end;
     station_end.name = get_station_from_id(id_end)->name;
