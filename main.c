@@ -80,10 +80,16 @@ void display_picture(SDL_Surface * ecran, SDL_Surface * image, int x, int y) {
     SDL_BlitSurface(image, NULL, ecran, &position);
 }
 
-void display_way(SDL_Surface * ecran) {
+void display_way(SDL_Surface * ecran, int distance) {
 	TTF_Font * police = TTF_OpenFont("Ubuntu-L.ttf", 25);
 	SDL_Color couleurNoire = {0, 0, 0};
-	SDL_Surface * texte = TTF_RenderUTF8_Blended(police, "Trajet à suivre :", couleurNoire);
+	char * titre = malloc(1000);
+	strcat(titre, "Trajet à suivre : (");
+	char str[12];
+	sprintf(str, "%d", distance);
+	strcat(titre, str);
+	strcat(titre, " minutes)");
+	SDL_Surface * texte = TTF_RenderUTF8_Blended(police, titre, couleurNoire);
 	SDL_Surface * instruction = NULL;
 	//SDL_Color couleurLigne;
 	int r, g, b;
@@ -125,10 +131,10 @@ void display_way(SDL_Surface * ecran) {
 				strcat(tmp, ")");
 				sscanf(get_line_from_station(get_station_from_id(tab_chemin[i - 1]))[0]->couleur, "#%2d%2d%2d", &r, &g, &b);
 			}
-			couleurLigne.r = r;
-			couleurLigne.g = g;
-			couleurLigne.b = b;
-			printf("abc\n");
+			//couleurLigne.r = r;
+			//couleurLigne.g = g;
+			//couleurLigne.b = b;
+			//printf("abc\n");
 			instruction = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
 			/*} else {
 				if(is_on_same_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i + 1]))) {
@@ -165,8 +171,8 @@ void draw_base_screen(SDL_Surface * ecran) {
 void handle_click(int x, int y, SDL_Surface * ecran) {
 	if(x >= 900 && x <= 900 + 180 && y >= 850 && y <= 850 + 50){
 		printf("Bouton\n");
-		shortest_way(tab_id[0], tab_id[1], MAT_RESEAU);
-		display_way(ecran);
+		int d = shortest_way(tab_id[0], tab_id[1], MAT_RESEAU);
+		display_way(ecran, d);
 		index_tab = 0;
 		return;
 	} else if(y > 812) {
