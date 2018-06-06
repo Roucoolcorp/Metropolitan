@@ -85,40 +85,51 @@ void display_way(SDL_Surface * ecran) {
 	SDL_Color couleurNoire = {0, 0, 0};
 	SDL_Surface * texte = TTF_RenderUTF8_Blended(police, "Trajet à suivre :", couleurNoire);
 	SDL_Surface * instruction = NULL;
+	//SDL_Color couleurLigne;
+	int r, g, b;
 	display_picture(ecran, texte, 50, 833);
 	SDL_Flip(ecran);
 	int i;
 	int mini_index = 0;
 	for(i = tab_chemin_size - 1; i >= 0; i--) {
 		if(i < tab_chemin_size - 1 && i > 0) {
-			printf("Inf\n");
-			if(is_on_same_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1])) || is_on_same_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i + 1]))) {
-				printf("Same line\n");
+			//printf("Inf\n");
+			if(is_on_same_line(get_station_from_id(tab_chemin[i + 1]), get_station_from_id(tab_chemin[i])) && is_on_same_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i + 1]))) {
+				printf("Same line - %s (%d) %s (%d)\n", get_station_from_id(tab_chemin[i])->name, get_station_from_id(tab_chemin[i])->id, get_station_from_id(tab_chemin[i + 1])->name, get_station_from_id(tab_chemin[i + 1])->id);
 				continue;
 			} else {
-				printf("Not same line\n");
+				printf("Not same line - %s (%d) %s (%d)\n", get_station_from_id(tab_chemin[i])->name, get_station_from_id(tab_chemin[i])->id, get_station_from_id(tab_chemin[i + 1])->name, get_station_from_id(tab_chemin[i + 1])->id);
 			}
 		} else {
 			printf("First or last\n");
 		}
 		printf("%d\n", tab_chemin[i]);
-		char * tmp = malloc(1000);
+		char * tmp = malloc(2000);
 		if(i == 0) {
 			strcat(tmp, "Arrivé à ");
 			strcat(tmp, get_station_from_id(tab_chemin[i])->name);
+			instruction = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
 		} else {
 			strcat(tmp, "Prendre le métro à ");
 			strcat(tmp, get_station_from_id(tab_chemin[i])->name);
+			sscanf(get_line_from_station(get_station_from_id(tab_chemin[i]))[0]->couleur, "#%2d%2d%2d", &r, &g, &b);
 			//if(is_on_same_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1]))) {
 			if(get_common_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1])) != NULL) {
 				strcat(tmp, " (");
 				strcat(tmp, get_common_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1]))->nom);
 				strcat(tmp, ")");
+				sscanf(get_common_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1]))->couleur, "#%2d%2d%2d", &r, &g, &b);
 			} else {
 				strcat(tmp, " (");
 				strcat(tmp, (get_line_from_station(get_station_from_id(tab_chemin[i - 1])))[0]->nom);
 				strcat(tmp, ")");
+				sscanf(get_line_from_station(get_station_from_id(tab_chemin[i - 1]))[0]->couleur, "#%2d%2d%2d", &r, &g, &b);
 			}
+			couleurLigne.r = r;
+			couleurLigne.g = g;
+			couleurLigne.b = b;
+			printf("abc\n");
+			instruction = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
 			/*} else {
 				if(is_on_same_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i + 1]))) {
 					strcat(tmp, " (");
@@ -127,46 +138,11 @@ void display_way(SDL_Surface * ecran) {
 				}
 			}*/
 		}
-		instruction = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
 		display_picture(ecran, instruction, 50, 860 + mini_index * 30);
 		mini_index++;
 		SDL_Flip(ecran);
 	}
 	TTF_CloseFont(police);
-}
-
-void handle_click(int x, int y, SDL_Surface * ecran) {
-	if(x >= 900 && x <= 900 + 180 && y >= 850 && y <= 850 + 50){
-		printf("Bouton\n");
-		shortest_way(tab_id[0], tab_id[1], MAT_RESEAU);
-		display_way(ecran);
-		return;
-	} else if(y > 812) {
-		printf("Clear\n");
-		draw_base_screen(ecran);
-		return;
-	}
-
-	int i;
-	for(i = 0; i < RESEAU.nb_station; i++){
-		station * st = RESEAU.stations + i;
-		int station_x, station_y;
-		station_x = map(st->lat, 2.222997, 2.474476, 0, 1120);
-		station_y = map(st->lng, 48.794310, 48.926113, 812, 0);
-		if(x <= station_x + 10 && x >= station_x - 10 && y <= station_y + 10 && y >= station_y - 10) {
-			printf("Found : %s\n", st->name);
-			display_station(ecran, st, 1);
-			tab_id[index_tab] = st->id;
-			index_tab++;
-			index_tab%=4;
-			if(index_tab == 0) {
-				optimal_way(tab_id);
-				display_way(ecran);
-			}
-			return;
-		}
-	}
-	printf("Not found\n");
 }
 
 void draw_base_screen(SDL_Surface * ecran) {
@@ -186,10 +162,45 @@ void draw_base_screen(SDL_Surface * ecran) {
     SDL_FreeSurface(paris);
 }
 
+void handle_click(int x, int y, SDL_Surface * ecran) {
+	if(x >= 900 && x <= 900 + 180 && y >= 850 && y <= 850 + 50){
+		printf("Bouton\n");
+		shortest_way(tab_id[0], tab_id[1], MAT_RESEAU);
+		display_way(ecran);
+		index_tab = 0;
+		return;
+	} else if(y > 812) {
+		printf("Clear\n");
+		draw_base_screen(ecran);
+		index_tab = 0;
+		return;
+	}
+
+	int i;
+	for(i = 0; i < RESEAU.nb_station; i++){
+		station * st = RESEAU.stations + i;
+		int station_x, station_y;
+		station_x = map(st->lat, 2.222997, 2.474476, 0, 1120);
+		station_y = map(st->lng, 48.794310, 48.926113, 812, 0);
+		if(x <= station_x + 10 && x >= station_x - 10 && y <= station_y + 10 && y >= station_y - 10) {
+			printf("Found : %s\n", st->name);
+			display_station(ecran, st, 1);
+			tab_id[index_tab] = st->id;
+			index_tab++;
+			index_tab%=4;
+			//if(index_tab == 0) {
+			//	optimal_way(tab_id);
+			//	display_way(ecran);
+			//}
+			return;
+		}
+	}
+	printf("Not found\n");
+}
+
 void ui() {
 	SDL_WM_SetCaption("Metropolitan", NULL);
     SDL_Surface *ecran = SDL_SetVideoMode(1120, 1200, 32, SDL_HWSURFACE);
-    SDL_Surface * paris = SDL_LoadBMP("carte_paris.bmp");
     draw_base_screen(ecran);
 	int continuer = 1;
 	SDL_Event event;
@@ -214,9 +225,12 @@ int main() {
 	TTF_Init();
 
 	load_file("bdd.txt");
+
+	printf("%d\n", is_on_same_line(get_station_from_name("Concorde"), get_station_from_name("Champs-Élysées - Clémenceau")));
+
 	//printf("%s\n", get_line_from_station_name("Pierre et Marie Curie")->nom);
-	int id_station_start, id_station_end;
-	id_station_start = 1;//get_station_start();
+	//int id_station_start, id_station_end;
+	//id_station_start = 1;//get_station_start();
 	//id_station_end = get_station_end();
 	//shortest_way(id_station_start, id_station_end, MAT_RESEAU);
     tab_id[0] = 1;//id_station_start;

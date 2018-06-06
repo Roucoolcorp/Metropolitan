@@ -1,6 +1,8 @@
 #ifndef STATIONS
 #define STATIONS
 
+#include <stdlib.h>
+
 typedef struct Station station;
 typedef struct Ligne ligne;
 //typedef struct Sous_stat sous_stat;

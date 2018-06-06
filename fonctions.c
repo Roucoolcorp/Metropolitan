@@ -8,6 +8,7 @@ extern int* tab_succ;
 extern int tab_succ_size;
 extern int * tab_chemin;
 extern int tab_chemin_size;
+int min[6];
 
 int positive_degrees(int s, mat_graph *p_graphe)
 {
@@ -304,8 +305,6 @@ int get_next_station()
 
 int * optimal_way(int * tab_id)            //AB AC AD BC BD CD
 {
-    int i;
-    int min[6];
     int minimum = 300;
     min[0] = shortest_way(tab_id[0], tab_id[1], MAT_RESEAU); //AB
     min[1] = shortest_way(tab_id[0], tab_id[2], MAT_RESEAU); //AC

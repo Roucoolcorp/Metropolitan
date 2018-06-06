@@ -50,8 +50,8 @@ ligne * get_common_line(station * st1, station * st2) {
       if(l2[j] == NULL) {
         break;
       }
-      printf("a :\n");
-      printf("l1 = %s | l2 = %s\n", l1[i]->nom, l2[j]->nom);
+      //printf("a :\n");
+      //printf("l1 = %s | l2 = %s\n", l1[i]->nom, l2[j]->nom);
       if(l2[j] == l1[i]) {
         return l1[i];
       }
