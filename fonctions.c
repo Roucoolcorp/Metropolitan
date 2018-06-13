@@ -103,9 +103,15 @@ void load_file(char * filename) {
             read = getline(&line, &len, fp);
             int nbr_station_aller = 0;
             sscanf(line, "%d", &nbr_station_aller);
-            li.stations = malloc(sizeof(station) * nbr_station_aller);
+            li.stations = malloc(sizeof(station) * (nbr_station_aller + 3));
+            int found[100];
+            int temp;
+            for(temp = 0; temp < 100; temp++) {
+                found[temp] = -1;
+            }
             // Read the line data for way #1
             int j;
+            int index = 0;
             for(j = 0; j < nbr_station_aller; j++) {
                 read = getline(&line, &len, fp);
                 char * station1 = malloc(100);
@@ -113,12 +119,28 @@ void load_file(char * filename) {
                 int distance = -2;
                 sscanf(line, "%[^:]:%[^:]:%d", station1, station2, &distance);
                 *(li.stations + j) = *get_station_from_name(station1); // Add the station to the line's stations
+                /*if(j == nbr_station_aller - 1) { // If last station of the line, don't forget to add the last
+                    *(li.stations + j + 1) = *get_station_from_name(station2);
+                    printf("Last station = %s\n", (li.stations + j + 1)->name);
+                }*/
+                if(tab_contains_station(get_station_from_name(station1)->id, found) == 0) {
+                    *(li.stations + j) = *get_station_from_name(station1);
+                    found[index] = get_station_from_name(station1)->id;
+                    index++;
+                }
+                if(tab_contains_station(get_station_from_name(station2)->id, found) == 0) {
+                    *(li.stations + j) = *get_station_from_name(station2);
+                    found[index] = get_station_from_name(station2)->id;
+                    index++;
+                }
                 if(is_on_same_line(get_station_from_name(station1), get_station_from_name(station2))) {
                     setElement(distance, MAT_RESEAU, get_id_from_name(station1), get_id_from_name(station2));
                 } else {
                     setElement(distance + li.attente_metro, MAT_RESEAU, get_id_from_name(station1), get_id_from_name(station2));
                 }
             }
+
+            nbr_station_aller = index - 1;
 
             // Read the number of stations for way #2
             read = getline(&line, &len, fp);

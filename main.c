@@ -17,36 +17,6 @@ int tab_succ_size;
 int * tab_chemin;
 int tab_chemin_size;
 
-/*int main() {
-	load_file("bdd.txt");
-
-	//printf("%s\n", get_line_from_station_name("Pierre et Marie Curie")->nom);
-
-	//if(is_on_same_line(get_station_from_name("Pierre et Marie Curie"), get_station_from_name("Vavin"))) {
-	//	printf("Oui\n");
-	//} else {
-	//	printf("Non\n");
-	//}
-
-	int id_station_start, id_station_end;
-	id_station_start = get_station_start();
-	id_station_end = get_station_end();
-	//debut commentaire char * name_start = malloc(100);
-    printf("Where are you ?\n");
-    scanf("%[^\n]", name_start);
-    char * name_end = malloc(100);
-    printf("Where are you going?\n");
-    printf("a\n");
-    scanf("%[^\n]", name_end);
-    printf("b\n");
-    id_station_start = get_id_from_name(name_start);
-    id_station_end = get_id_from_name(name_end);
-    free(name_end);
-	free(name_start);//fin du commentaire
-	shortest_way(id_station_start, id_station_end, MAT_RESEAU);
-	return 0;
-}*/
-
 // Arduino's map() function
 float map(float x, float in_min, float in_max, float out_min, float out_max)
 {
@@ -83,9 +53,13 @@ void display_picture(SDL_Surface * ecran, SDL_Surface * image, int x, int y) {
 void display_way(SDL_Surface * ecran, int distance) {
 	TTF_Font * police = TTF_OpenFont("Ubuntu-L.ttf", 25);
 	SDL_Color couleurNoire = {0, 0, 0};
-	char * titre = malloc(1000);
+	SDL_Color couleurLigne = {0, 0, 0};
+	char * titre = malloc(500);
+	titre[0] = '\0';
+	printf("Jusqu'à là ça marche\n");
 	strcat(titre, "Trajet à suivre : (");
-	char str[12];
+	printf("Enfin je crois\n");
+	char * str = malloc(100);
 	sprintf(str, "%d", distance);
 	strcat(titre, str);
 	strcat(titre, " minutes)");
@@ -97,58 +71,87 @@ void display_way(SDL_Surface * ecran, int distance) {
 	SDL_Flip(ecran);
 	int i;
 	int mini_index = 0;
+	free(str);
+	free(titre);
+
+	printf("\n");
+	ligne * current_line = NULL;
+	//SDL_Renderer * renderer = SDL_CreateRenderer(ecran, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	for(i = tab_chemin_size - 1; i >= 0; i--) {
-		if(i < tab_chemin_size - 1 && i > 0) {
-			//printf("Inf\n");
-			if(is_on_same_line(get_station_from_id(tab_chemin[i + 1]), get_station_from_id(tab_chemin[i])) && is_on_same_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i + 1]))) {
-				printf("Same line - %s (%d) %s (%d)\n", get_station_from_id(tab_chemin[i])->name, get_station_from_id(tab_chemin[i])->id, get_station_from_id(tab_chemin[i + 1])->name, get_station_from_id(tab_chemin[i + 1])->id);
-				continue;
-			} else {
-				printf("Not same line - %s (%d) %s (%d)\n", get_station_from_id(tab_chemin[i])->name, get_station_from_id(tab_chemin[i])->id, get_station_from_id(tab_chemin[i + 1])->name, get_station_from_id(tab_chemin[i + 1])->id);
-			}
-		} else {
-			printf("First or last\n");
-		}
-		printf("%d\n", tab_chemin[i]);
-		char * tmp = malloc(2000);
-		if(i == 0) {
-			strcat(tmp, "Arrivé à ");
+		char * tmp = malloc(500);
+		tmp[0] = '\0';
+		printf("Station à traiter : %s (i = %d)\n", get_station_from_id(tab_chemin[i])->name, i);
+		if(i == tab_chemin_size - 1) {
+			printf("   C'est la première station\n");
+			printf("   La suivante est : %s\n", get_station_from_id(tab_chemin[i - 1])->name);
+			current_line = get_common_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1]));
+			printf("   Nous entrons sur la %s\n", current_line->nom);
+
+			strcat(tmp, "Prenre le metro à ");
 			strcat(tmp, get_station_from_id(tab_chemin[i])->name);
-			instruction = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
-		} else {
-			strcat(tmp, "Prendre le métro à ");
+			strcat(tmp, ", ");
+			strcat(tmp, current_line->nom);
+			
+			sscanf(current_line->couleur, "#%2d%2d%2d", &r, &g, &b);
+			couleurLigne.r = r;
+			couleurLigne.g = g;
+			couleurLigne.b = b;
+			
+			instruction = TTF_RenderUTF8_Blended(police, tmp, couleurLigne);
+			display_picture(ecran, instruction, 50, 860 + mini_index * 30);
+			SDL_Flip(ecran);
+			mini_index++;
+		} else if(i == 0) {
+			printf("   Nous sommes arrivés\n");
+
+			strcat(tmp, "Vous êtes arrivé à ");
 			strcat(tmp, get_station_from_id(tab_chemin[i])->name);
-			sscanf(get_line_from_station(get_station_from_id(tab_chemin[i]))[0]->couleur, "#%2d%2d%2d", &r, &g, &b);
-			//if(is_on_same_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1]))) {
-			if(get_common_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1])) != NULL) {
-				strcat(tmp, " (");
-				strcat(tmp, get_common_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1]))->nom);
-				strcat(tmp, ")");
-				sscanf(get_common_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1]))->couleur, "#%2d%2d%2d", &r, &g, &b);
-			} else {
-				strcat(tmp, " (");
-				strcat(tmp, (get_line_from_station(get_station_from_id(tab_chemin[i - 1])))[0]->nom);
-				strcat(tmp, ")");
-				sscanf(get_line_from_station(get_station_from_id(tab_chemin[i - 1]))[0]->couleur, "#%2d%2d%2d", &r, &g, &b);
-			}
-			//couleurLigne.r = r;
-			//couleurLigne.g = g;
-			//couleurLigne.b = b;
-			//printf("abc\n");
+			
 			instruction = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
-			/*} else {
-				if(is_on_same_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i + 1]))) {
-					strcat(tmp, " (");
-					strcat(tmp, get_common_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i + 1]))->nom);
-					strcat(tmp, ")");
+			display_picture(ecran, instruction, 50, 860 + mini_index * 30);
+			SDL_Flip(ecran);
+			mini_index++;
+		} else {
+			printf("   La suivante est : %s\n", get_station_from_id(tab_chemin[i - 1])->name);
+			if(tab_contains(current_line, get_line_from_station(get_station_from_id(tab_chemin[i - 1])))) {
+				printf("   Nous restons sur la même ligne (%s)\n", current_line->nom);
+			} else {
+				if(current_line != get_common_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1]))) {
+					current_line = get_common_line(get_station_from_id(tab_chemin[i]), get_station_from_id(tab_chemin[i - 1]));
+					printf("   Nous changeons de ligne : %s\n", current_line->nom);
+
+					strcat(tmp, "Changement à ");
+					strcat(tmp, get_station_from_id(tab_chemin[i])->name);
+					strcat(tmp, ", prendre la ");
+					strcat(tmp, current_line->nom);
+					
+					sscanf(current_line->couleur, "#%2d%2d%2d", &r, &g, &b);
+					couleurLigne.r = r;
+					couleurLigne.g = g;
+					couleurLigne.b = b;
+					
+					instruction = TTF_RenderUTF8_Blended(police, tmp, couleurLigne);
+					display_picture(ecran, instruction, 50, 860 + mini_index * 30);
+					SDL_Flip(ecran);
+					mini_index++;
+				} else {
+					printf("   On reste sur la même ligne\n");
 				}
-			}*/
+			}
 		}
-		display_picture(ecran, instruction, 50, 860 + mini_index * 30);
-		mini_index++;
-		SDL_Flip(ecran);
+
+		//if(i != tab_chemin_size - 1) {
+		//	SDL_SetRenderDrawColor(renderer, r, g, b, 0);
+		//	SDL_RenderDrawLine(renderer, map(get_station_from_id(tab_chemin[i])->lat, 2.222997, 2.474476, 0, 1120), map(tab_chemin[i]->lng, 48.794310, 48.926113, 812, 0), get_station_from_id(tab_chemin[i+1])->lat, 2.222997, 2.474476, 0, 1120), map(tab_chemin[i+1]->lng, 48.794310, 48.926113, 812, 0);
+		//	SDL_RenderPresent(renderer);
+		//	SDL_Flip(ecran);
+		//}
+
+		free(tmp);
+		printf("\n");
 	}
 	TTF_CloseFont(police);
+	//printf("10\n");
 }
 
 void draw_base_screen(SDL_Surface * ecran) {
@@ -232,7 +235,16 @@ int main() {
 
 	load_file("bdd.txt");
 
+	/*printf("\n-------------------------\n");
+	int i;
+	for(i = 0; i < RESEAU.nb_station; i++) {
+		get_line_from_station(RESEAU.stations + i);
+	}
+	printf("----------------------------\n\n");*/
+
 	printf("%d\n", is_on_same_line(get_station_from_name("Concorde"), get_station_from_name("Champs-Élysées - Clémenceau")));
+
+	get_line_from_station_name("Châtillon - Montrouge");
 
 	//printf("%s\n", get_line_from_station_name("Pierre et Marie Curie")->nom);
 	//int id_station_start, id_station_end;

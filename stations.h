@@ -38,8 +38,11 @@ struct Reseau
 
 typedef struct Reseau reseau;
 
+int tab_contains_station(int id, int tab[]);
+int tab_contains(ligne * l, ligne ** lines);
 int is_on_same_line(station * st1, station * st2);
 ligne * get_common_line(station * st1, station * st2);
+int number_of_lines_in_station(station * st);
 ligne ** get_line_from_station_name(char * name);
 ligne ** get_line_from_station(station * st);
 int get_id_from_name(char * name);
